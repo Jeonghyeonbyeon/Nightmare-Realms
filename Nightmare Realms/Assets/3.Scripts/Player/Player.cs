@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private SpriteRenderer sprite;
-    public int curHP = 100;
-    public int maxHP = 100;
+    public int curHP;
+    public int maxHP;
 
     private void Start()
     {

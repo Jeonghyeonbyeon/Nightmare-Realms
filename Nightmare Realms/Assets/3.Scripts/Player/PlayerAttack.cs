@@ -12,7 +12,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private LayerMask monsterLayers;
     private SpriteRenderer sprite;
     private Animator anim;
-    private PlayerController player;
+    private PlayerController playerController;
+    private Player player;
     private bool isAttackCheck;
     public bool isWearingItem;
 
@@ -20,14 +21,15 @@ public class PlayerAttack : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        player = GetComponent<PlayerController>();
+        playerController = GetComponent<PlayerController>();
+        player = GetComponent<Player>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && !isAttackCheck)
         {
-            player.isAttack = true;
+            playerController.isAttack = true;
             isAttackCheck = true;
             anim.Play("Attack");
 
@@ -54,6 +56,7 @@ public class PlayerAttack : MonoBehaviour
         {
             isWearingItem = false;
             weaponDamage = 0;
+            player.maxHP = 100;
 
             foreach (Slot s in slot)
             {
@@ -65,23 +68,25 @@ public class PlayerAttack : MonoBehaviour
                     case "ShadowSword":
                         weaponDamage += Resources.Load<Item>($"Prefabs/itemData/shadowSword").damage;
                         break;
-                    case "":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/darkSoulSword").damage;
+                    case "BlackCrystalRing":
+                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/blackCrystalRing").damage;
+                        player.maxHP += Resources.Load<Item>($"Prefabs/itemData/blackCrystalRing").health;
                         break;
                 }
             }
+            UIManager.instance.SetPlayerHP(player.curHP, player.maxHP);
         }
         OnAttackAnimationEnd();
     }
 
     private void OnAttackAnimationEnd()
     {
-        if (player.isAttack)
+        if (playerController.isAttack)
         {
             float animTime = anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1;
             if (animTime >= 0.9f)
             {
-                player.isAttack = false;
+                playerController.isAttack = false;
                 isAttackCheck = false;
                 anim.Play("Idle");
             }
