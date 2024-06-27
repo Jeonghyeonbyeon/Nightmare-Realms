@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Coin
+  - Skull
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Monster
+  - Player
+  - Item
+  - MinimapIcon
+  - Coin
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1764722697
+    locked: 0
+  - name: Ground
+    uniqueID: 1337347879
+    locked: 0
+  - name: Utils
+    uniqueID: 1529715759
+    locked: 0
+  - name: Shop
+    uniqueID: 169993345
+    locked: 0
+  - name: Monster
+    uniqueID: 347082255
+    locked: 0
+  - name: Player
+    uniqueID: 3178037807
+    locked: 0
+  - name: Item
+    uniqueID: 1420308117
+    locked: 0
+  - name: UI
+    uniqueID: 656474383
+    locked: 0
