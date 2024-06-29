@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4001086599008266775}
   - component: {fileID: 3858567532089965309}
   m_Layer: 8
-  m_Name: avocado
+  m_Name: Avocado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

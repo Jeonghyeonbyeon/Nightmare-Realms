@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject inventory;
     public GameObject shop;
     public Text coinText;
+    public Text playerHPText;
     public Slider playerHP;
 
     private void Awake()
@@ -26,6 +27,13 @@ public class UIManager : MonoBehaviour
 
     public void SetPlayerHP(int cur, int max)
     {
+        if (cur >= max)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().curHP = max;
+            cur = max;
+        }
+
         playerHP.value = (float)cur / max;
+        playerHPText.text = $"{cur}/{max}";
     }
 }

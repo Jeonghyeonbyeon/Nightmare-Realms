@@ -8,6 +8,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 {
     private Inventory inventory;
     private Image slot;
+    private Player player;
     public string itemName;
     public bool visible;
     public int idx;
@@ -25,6 +26,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         slot = GetComponent<Image>();
         canvas = FindObjectOfType<Canvas>();
         canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         if (dragImage == null)
         {
@@ -88,11 +90,11 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
     {
         switch (itemName)
         {
-            case "apple":
-                Debug.Log("apple eat!");
+            case "Apple":
+                player.Heal(Resources.Load<Item>("Prefabs/ItemData/apple").health);
                 break;
-            case "avocado":
-                Debug.Log("avocado eat!");
+            case "Avocado":
+                player.Heal(Resources.Load<Item>("Prefabs/ItemData/avocado").health);
                 break;
         }
         SetVisible(null, null, false);

@@ -15,13 +15,14 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     {
         if (itemData != null)
         {
-            NPCText.text = $"{itemData.itemName}\nDamage: {itemData.damage}\nHealth: {itemData.health}";
+            NPCText.text = $"{itemData.itemName}\nDamage: +{itemData.damage}\nHealth: +{itemData.health}";
 
             switch (itemData.Tear)
             {
+                case "Food": tearText.color = new Color(0 / 255f, 225 / 255f, 255 / 255f); break;
                 case "Common": tearText.color = new Color(25 / 255f, 255 / 255f, 0 / 255f); break;
                 case "Rare": tearText.color = new Color(255 / 255f, 165 / 255f, 0 / 255f); break;
-                case "Unique": tearText.color = new Color(0 / 255f, 210 / 255f, 255 / 255f); break;
+                case "Unique": tearText.color = new Color(200 / 255f, 0 / 255f, 255 / 255f); break;
                 case "Legendary": tearText.color = new Color(255 / 255f, 250 / 255f, 0 / 255f); break;
             }
             tearText.text = $"{itemData.Tear}";

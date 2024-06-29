@@ -22,7 +22,7 @@ public class ItemPurchaseButton : MonoBehaviour
         if (GameManager.instance.coinCount >= itemData.price)
         {
             GameManager.instance.UpdateCoinCount(-itemData.price);
-            char firstChar = char.ToLower(itemData.name[0]);
+            char firstChar = char.ToUpper(itemData.name[0]);
             string restOfString = itemData.name.Substring(1);
             string itemName = firstChar + restOfString;
             GameObject item = Instantiate(Resources.Load<GameObject>($"Prefabs/Item/{itemName}"), itemSpawnPoint.position, Quaternion.identity);

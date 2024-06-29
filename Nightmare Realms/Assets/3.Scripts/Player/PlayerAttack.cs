@@ -75,6 +75,10 @@ public class PlayerAttack : MonoBehaviour
                         weaponDamage += Resources.Load<Item>($"Prefabs/itemData/blackCrystalRing").damage;
                         player.maxHP += Resources.Load<Item>($"Prefabs/itemData/blackCrystalRing").health;
                         break;
+                    case "WizardHat":
+                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/wizardHat").damage;
+                        player.maxHP += Resources.Load<Item>($"Prefabs/itemData/wizardHat").health;
+                        break;
                 }
             }
             UIManager.instance.SetPlayerHP(player.curHP, player.maxHP);

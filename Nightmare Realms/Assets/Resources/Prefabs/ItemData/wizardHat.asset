@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: Coin_0
+  m_Name: wizardHat
   m_EditorClassIdentifier: 
-  sprite: {fileID: 639272665, guid: bef934edca9fe4f3f9f9b836bfd5a7a4, type: 3}
-  itemName: "\uCF54\uC778"
-  Tear: Common
-  damage: 75
-  health: 75
-  price: 10000
+  sprite: {fileID: 480042613, guid: 9205243239121452d8b85724ca921ba3, type: 3}
+  itemName: "\uB9C8\uBC95\uC0AC\uC758 \uBAA8\uC790"
+  Tear: Rare
+  damage: 15
+  health: 10
+  price: 250

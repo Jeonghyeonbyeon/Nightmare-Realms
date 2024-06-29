@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: apple
+  m_Name: moonlightSword
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1847463989, guid: a03c2610221b14940b818fb271b448fa, type: 3}
-  itemName: "\uC0AC\uACFC"
-  Tear: Food
-  damage: 0
-  health: 15
-  price: 250
+  sprite: {fileID: 1521632153, guid: 6191eee3613874316bf829fe6988ea35, type: 3}
+  itemName: "\uC6D4\uAD11 \uAC80"
+  Tear: Unique
+  damage: 45
+  health: 0
+  price: 400
