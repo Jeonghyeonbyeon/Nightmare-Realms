@@ -68,6 +68,9 @@ public class PlayerAttack : MonoBehaviour
                     case "ShadowSword":
                         weaponDamage += Resources.Load<Item>($"Prefabs/itemData/shadowSword").damage;
                         break;
+                    case "IceAx":
+                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/iceAx").damage;
+                        break;
                     case "BlackCrystalRing":
                         weaponDamage += Resources.Load<Item>($"Prefabs/itemData/blackCrystalRing").damage;
                         player.maxHP += Resources.Load<Item>($"Prefabs/itemData/blackCrystalRing").health;

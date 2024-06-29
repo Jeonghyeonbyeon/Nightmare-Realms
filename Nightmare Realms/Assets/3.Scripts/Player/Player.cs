@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     public IEnumerator TakeDamage(int damage, float time)
     {
         yield return new WaitForSecondsRealtime(time);
+
+        if (curHP >= maxHP)
+            curHP = maxHP;
+
         curHP -= damage;
 
         if (curHP <= 0)
