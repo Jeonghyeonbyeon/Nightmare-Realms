@@ -7,6 +7,7 @@ TagManager:
   - Coin
   - Skull
   - Fireball
+  - FireWizardSkull
   layers:
   - Default
   - TransparentFX

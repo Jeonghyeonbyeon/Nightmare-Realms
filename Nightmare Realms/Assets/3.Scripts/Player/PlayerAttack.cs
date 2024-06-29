@@ -49,6 +49,10 @@ public class PlayerAttack : MonoBehaviour
                 {
                     StartCoroutine(monster.GetComponent<Skull>().TakeDamage(playerDamage + weaponDamage));
                 }
+                else if (monster.CompareTag("FireWizardSkull"))
+                {
+                    StartCoroutine(monster.GetComponent<FireWizardSkull>().TakeDamage(playerDamage + weaponDamage));
+                }
             }
         }
 
