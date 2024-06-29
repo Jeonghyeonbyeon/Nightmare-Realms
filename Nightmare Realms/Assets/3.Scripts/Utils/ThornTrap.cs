@@ -17,7 +17,7 @@ public class ThornTrap : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(player.GetComponent<Player>().TakeDamage(trapDamage, 0));
+            player.GetComponent<Player>().TakeDamage(trapDamage, 0);
             player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
     }

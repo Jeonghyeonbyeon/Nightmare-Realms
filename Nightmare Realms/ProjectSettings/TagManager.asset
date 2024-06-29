@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Skull
+  - Fireball
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Item
   - MinimapIcon
   - Coin
-  - 
+  - Launch
   - 
   - 
   - 

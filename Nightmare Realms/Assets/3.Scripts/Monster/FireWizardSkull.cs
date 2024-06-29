@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skull : Monster
+public class FireWizardSkull : Monster
 {
     public int damage;
-    private float attackCooldown = 3.0f;
+    private float attackCooldown = 3.5f;
     private float lastAttackTime;
 
     protected override void Start()
     {
-        detectionRange = 7.5f;
-        attackRange = 1f;
-        speed = 3f;
+        detectionRange = 9f;
+        attackRange = 6f;
+        speed = 2f;
         lastAttackTime = -attackCooldown;
         base.Start();
     }
@@ -45,7 +45,7 @@ public class Skull : Monster
             Debug.Log("이동!");
             Vector2 direction = (playerTransform.position - transform.position).normalized;
             rigid.velocity = new Vector2(direction.x * speed, rigid.velocity.y);
-        }   
+        }
         else
         {
             Debug.Log("점프!");
@@ -73,9 +73,11 @@ public class Skull : Monster
             {
                 anim.Play("Attack");
 
-                if (hit != null && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f)
+                if (hit != null && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.8f)
                 {
-                    hit.transform.GetComponent<Player>().TakeDamage(damage, 0.15f);
+                    Debug.Log("공격!");
+                    GameObject fireball = Instantiate(Resources.Load<GameObject>("Prefabs/Utils/Fireball"), transform.position, Quaternion.identity);
+                    fireball.GetComponent<Fireball>().damage = damage;
                     lastAttackTime = Time.time;
                 }
             }

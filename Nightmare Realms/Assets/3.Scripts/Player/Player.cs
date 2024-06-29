@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +6,9 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     public int curHP;
     public int maxHP;
+    private bool isTakingDamage = false;
+    private float damageTimer = 0f;
+    public float damageDuration;  
 
     private void Start()
     {
@@ -14,11 +16,31 @@ public class Player : MonoBehaviour
         UIManager.instance.SetPlayerHP(curHP, maxHP);
     }
 
-    public IEnumerator TakeDamage(int damage, float time)
+    private void Update()
+    {
+        if (isTakingDamage)
+        {
+            damageTimer += Time.deltaTime;
+            if (damageTimer >= damageDuration)
+            {
+                isTakingDamage = false;
+                damageTimer = 0f;
+                sprite.color = Color.white;
+                UIManager.instance.SetPlayerHP(curHP, maxHP);
+            }
+        }
+    }
+
+    public void TakeDamage(int damage, float time)
+    {
+        StartCoroutine(TakeDamageCoroutine(damage, time));
+    }
+
+    private IEnumerator TakeDamageCoroutine(int damage, float time)
     {
         yield return new WaitForSecondsRealtime(time);
 
-        if (curHP >= maxHP)
+        if (curHP > maxHP)
             curHP = maxHP;
 
         curHP -= damage;
@@ -28,17 +50,13 @@ public class Player : MonoBehaviour
             curHP = 0;
             Dead();
         }
-        Color color = Color.red;
-        sprite.color = color;
-        yield return new WaitForSecondsRealtime(0.15f);
-        color = Color.white;
-        sprite.color = color;
-        UIManager.instance.SetPlayerHP(curHP, maxHP);
+        sprite.color = Color.red;
+        isTakingDamage = true;
     }
 
     private void Dead()
     {
-        
+        Debug.Log("Player has died");
     }
 
     public void Heal(int amount)
