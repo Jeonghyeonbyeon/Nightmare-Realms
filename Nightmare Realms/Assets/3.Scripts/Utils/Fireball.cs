@@ -26,5 +26,9 @@ public class Fireball : MonoBehaviour
             player.TakeDamage(damage, 0f);
             Destroy(gameObject, 0.1f);
         }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
