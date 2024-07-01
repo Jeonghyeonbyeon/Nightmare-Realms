@@ -15,6 +15,6 @@ MonoBehaviour:
   sprite: {fileID: -1347541644, guid: a03c2610221b14940b818fb271b448fa, type: 3}
   itemName: "\uC544\uBCF4\uCE74\uB3C4"
   Tear: Food
-  damage: 50
+  damage: 0
   health: 25
-  price: 450
+  price: 300

@@ -27,10 +27,12 @@ public class DieLine : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameObject.Find("Player").transform.position = new Vector3(-17.5f, 0.5f, 0f);
+            GameObject.Find("Player").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
             GameObject.Find("Player").GetComponent<Animator>().Play("Idle");
             GameObject.Find("Player").GetComponent<PlayerController>().enabled = false;
             GameObject.Find("Player").GetComponent<PlayerDash>().enabled = false;
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            player.TakeDamage(player.curHP / 2, 0);
 
             timer = true;
         }

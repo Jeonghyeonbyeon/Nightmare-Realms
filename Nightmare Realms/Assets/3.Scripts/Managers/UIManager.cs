@@ -32,7 +32,6 @@ public class UIManager : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().curHP = max;
             cur = max;
         }
-
         playerHP.value = (float)cur / max;
         playerHPText.text = $"{cur}/{max}";
     }

@@ -22,7 +22,7 @@ public class Portal : MonoBehaviour
 
     private IEnumerator PullPlayerToPortal(Collider2D player)
     {
-        player.GetComponent<PlayerController>().enabled = false; 
+        player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<PlayerDash>().enabled = false;
         player.GetComponent<GhostEffect>().enabled = false;
         player.GetComponent<Animator>().Play("Dash");
@@ -46,15 +46,22 @@ public class Portal : MonoBehaviour
             yield return null;
         }
         player.transform.position = target;
-        SceneManager.LoadScene(GameManager.instance.stage++);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            int _stage = GameManager.instance.stage + 1;
-            SceneManager.LoadScene($"Stage_{_stage}");
+            GameManager.instance.stage += 1;
+            GameObject player = GameObject.Find("Player").gameObject;
+            player.transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
+            player.transform.rotation = Quaternion.identity;
+            player.transform.localScale = new Vector3(1, 1, 1);
+            player.GetComponent<PlayerController>().enabled = true;
+            player.GetComponent<PlayerDash>().enabled = true;
+            player.GetComponent<Rigidbody2D>().gravityScale = 1;
+            GameObject.FindGameObjectWithTag("MainCamera").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
+            gameObject.SetActive(false);
         }
     }
 
