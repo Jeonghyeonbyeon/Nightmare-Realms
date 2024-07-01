@@ -32,7 +32,10 @@ public class DieLine : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerController>().enabled = false;
             GameObject.Find("Player").GetComponent<PlayerDash>().enabled = false;
             Player player = GameObject.Find("Player").GetComponent<Player>();
-            player.TakeDamage(player.curHP / 2, 0);
+            if (player.curHP > 1)
+                player.TakeDamage(player.curHP / 2, 0);
+            else
+                player.TakeDamage(1, 0);
 
             timer = true;
         }
