@@ -11,6 +11,8 @@ public class Fireball : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         targetDirection = (player.transform.position - transform.position).normalized;
+
+        Destroy(gameObject, 5f);
     }
 
     void Update()
