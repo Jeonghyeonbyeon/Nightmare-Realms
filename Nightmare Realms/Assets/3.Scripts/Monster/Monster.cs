@@ -65,15 +65,16 @@ public abstract class Monster : MonoBehaviour
         curHP -= damage;
         SetHPSliderValue();
 
-        if (curHP <= 0)
-        {
-            ChangeStateTo(State.Dead);
-        }
         Color color = Color.red;
         sprite.color = color;
         yield return new WaitForSecondsRealtime(0.15f);
         color = new Color(150 / 255f, 150 / 255f, 150 / 255f);
         sprite.color = color;
+
+        if (curHP <= 0)
+        {
+            ChangeStateTo(State.Dead);
+        }
     }
 
     protected void SetHPSliderValue() => hp.value = (float)curHP / maxHP;

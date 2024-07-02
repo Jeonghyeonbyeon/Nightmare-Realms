@@ -93,7 +93,8 @@ public class FireWizardSkull : Monster
 
     protected override void Dead()
     {
-        Debug.Log("Skull Dead!");
+        GameManager.instance.UpdateMonsterCount(1);
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmos()
