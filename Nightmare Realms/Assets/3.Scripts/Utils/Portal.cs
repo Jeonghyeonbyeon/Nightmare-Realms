@@ -61,6 +61,7 @@ public class Portal : MonoBehaviour
             player.GetComponent<PlayerDash>().enabled = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
             GameObject.FindGameObjectWithTag("MainCamera").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
+            GameManager.instance.SetMonsterCount(GameManager.instance.stage);
             gameObject.SetActive(false);
         }
     }

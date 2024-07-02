@@ -7,18 +7,40 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int stage;
     public int coinCount;
+    public int monsterCount;
 
     private void Awake()
     {
-        if (instance == null)
+        instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+            UpdateMonsterCount(1);
+    }
+
+    private void Start()
+    {
+        SetMonsterCount(stage);
+    }
+
+    public void UpdateMonsterCount(int count)
+    {
+        monsterCount -= count;
+        UIManager.instance.currentMonsterCount.text = monsterCount.ToString();
+
+        if (monsterCount <= 0)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            GameObject.Find("Portal").transform.GetChild(stage - 1).gameObject.SetActive(true);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+    }
+
+    public void SetMonsterCount(int stage)
+    {
+        int count = Resources.Load<Stage>($"Prefabs/StageData/Stage_{stage}").monsterCount;
+        monsterCount = count;
+        UIManager.instance.currentMonsterCount.text = monsterCount.ToString();
     }
 
     public void UpdateCoinCount(int count)

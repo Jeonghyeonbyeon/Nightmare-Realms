@@ -10,19 +10,12 @@ public class UIManager : MonoBehaviour
     public GameObject shop;
     public Text coinText;
     public Text playerHPText;
+    public Text currentMonsterCount;
     public Slider playerHP;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
     }
 
     public void SetPlayerHP(int cur, int max)

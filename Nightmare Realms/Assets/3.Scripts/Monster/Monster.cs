@@ -72,7 +72,7 @@ public abstract class Monster : MonoBehaviour
         Color color = Color.red;
         sprite.color = color;
         yield return new WaitForSecondsRealtime(0.15f);
-        color = Color.white;
+        color = new Color(150 / 255f, 150 / 255f, 150 / 255f);
         sprite.color = color;
     }
 
