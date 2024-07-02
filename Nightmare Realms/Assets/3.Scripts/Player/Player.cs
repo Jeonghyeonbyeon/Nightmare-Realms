@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
             {
                 isTakingDamage = false;
                 damageTimer = 0f;
-                sprite.color = Color.white;
+                sprite.color = new Color(160 / 255f, 160 / 255f, 160 / 255f);
                 UIManager.instance.SetPlayerHP(curHP, maxHP);
             }
         }
