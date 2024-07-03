@@ -25,6 +25,13 @@ public class GameManager : MonoBehaviour
         SetMonsterCount(stage);
     }
 
+    public void SetMonsterCount(int stage)
+    {
+        int count = Resources.Load<Stage>($"Prefabs/StageData/Stage_{stage}").monsterCount;
+        monsterCount = count;
+        UIManager.instance.currentMonsterCount.text = monsterCount.ToString();
+    }
+
     public void UpdateMonsterCount(int count)
     {
         monsterCount -= count;
@@ -34,13 +41,6 @@ public class GameManager : MonoBehaviour
         {
             GameObject.Find("Portal").transform.GetChild(stage - 1).gameObject.SetActive(true);
         }
-    }
-
-    public void SetMonsterCount(int stage)
-    {
-        int count = Resources.Load<Stage>($"Prefabs/StageData/Stage_{stage}").monsterCount;
-        monsterCount = count;
-        UIManager.instance.currentMonsterCount.text = monsterCount.ToString();
     }
 
     public void UpdateCoinCount(int count)
