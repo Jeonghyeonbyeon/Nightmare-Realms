@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: iceAx
+  m_Name: abyssSword
   m_EditorClassIdentifier: 
-  sprite: {fileID: 420566404, guid: 80b159e05995b46509eb59e87b619dab, type: 3}
-  itemName: "\uC5BC\uC74C \uB3C4\uB07C"
-  Tear: Rare
-  damage: 35
+  sprite: {fileID: 327209250, guid: 5f8f78dee6a5e497286a5aa8d7ff5e92, type: 3}
+  itemName: "\uC2EC\uC5F0\uC758 \uAC80"
+  Tear: Unique
+  damage: 25
   health: 0
-  price: 300
+  price: 250

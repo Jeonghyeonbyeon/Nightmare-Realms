@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: wizardHat
+  m_Name: emeraldSlice
   m_EditorClassIdentifier: 
-  sprite: {fileID: 480042613, guid: 9205243239121452d8b85724ca921ba3, type: 3}
-  itemName: "\uB9C8\uBC95\uC0AC\uC758 \uBAA8\uC790"
+  sprite: {fileID: -391898152, guid: b26175599e4ef45bf9e2c7f1df8024b8, type: 3}
+  itemName: "\uC5D0\uBA54\uB784\uB4DC \uC2AC\uB77C\uC774\uC2A4"
   Tear: Rare
-  damage: 15
-  health: 10
-  price: 250
+  damage: 10
+  health: 0
+  price: 100

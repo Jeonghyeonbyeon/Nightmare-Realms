@@ -66,22 +66,11 @@ public class PlayerAttack : MonoBehaviour
             {
                 switch (s.itemName)
                 {
-                    case "DarkSoulSword":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/darkSoulSword").damage;
+                    case "EmeraldSlice":
+                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/emeraldSlice").damage;
                         break;
-                    case "ShadowSword":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/shadowSword").damage;
-                        break;
-                    case "IceAx":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/iceAx").damage;
-                        break;
-                    case "BlackCrystalRing":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/blackCrystalRing").damage;
-                        player.maxHP += Resources.Load<Item>($"Prefabs/itemData/blackCrystalRing").health;
-                        break;
-                    case "WizardHat":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/wizardHat").damage;
-                        player.maxHP += Resources.Load<Item>($"Prefabs/itemData/wizardHat").health;
+                    case "AbyssSword":
+                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/abyssSword").damage;
                         break;
                 }
             }
