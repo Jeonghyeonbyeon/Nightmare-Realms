@@ -22,15 +22,7 @@ public class ShopItemSlot : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            SetItem();
-        }
-    }
-
-    void SetItem()
+    public void SetItem()
     {
         List<Item> itemList = new List<Item>(itemData);
         ShuffleList(itemList);

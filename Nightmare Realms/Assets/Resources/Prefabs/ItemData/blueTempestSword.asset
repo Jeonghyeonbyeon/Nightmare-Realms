@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
+  m_Name: blueTempestSword
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 941428320, guid: dcaecdb1a147d4cbea5e60d7c8b8d260, type: 3}
+  itemName: "\uD478\uB978 \uD3ED\uD48D\uC758 \uAC80"
+  Tear: Unique
+  damage: 30
+  health: 0
+  price: 250
