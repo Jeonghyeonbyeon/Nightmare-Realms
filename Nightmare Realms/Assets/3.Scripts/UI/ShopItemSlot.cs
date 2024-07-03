@@ -32,9 +32,23 @@ public class ShopItemSlot : MonoBehaviour
 
     void SetItem()
     {
+        List<Item> itemList = new List<Item>(itemData);
+        ShuffleList(itemList);
+
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            itemSlot[i].sprite = itemData[Random.Range(0, itemData.Length)].sprite;
+            itemSlot[i].sprite = itemList[i].sprite;
+        }
+    }
+
+    void ShuffleList(List<Item> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            int randIndex = Random.Range(i, list.Count);
+            Item temp = list[i];
+            list[i] = list[randIndex];
+            list[randIndex] = temp;
         }
     }
 }

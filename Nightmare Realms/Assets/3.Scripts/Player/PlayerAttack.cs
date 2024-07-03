@@ -69,6 +69,9 @@ public class PlayerAttack : MonoBehaviour
                     case "EmeraldSlice":
                         weaponDamage += Resources.Load<Item>($"Prefabs/itemData/emeraldSlice").damage;
                         break;
+                    case "SunsetBlade":
+                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/sunsetBlade").damage;
+                        break;
                     case "AbyssSword":
                         weaponDamage += Resources.Load<Item>($"Prefabs/itemData/abyssSword").damage;
                         break;

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
+  m_Name: redSerrate
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 279457434, guid: 22d7cffc13af845128d4738ed1dc75b1, type: 3}
+  itemName: "\uB808\uB4DC \uC11C\uB808\uC774\uB4DC"
+  Tear: Unique
+  damage: 25
+  health: 0
+  price: 180

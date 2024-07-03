@@ -96,6 +96,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
             case "Avocado":
                 player.Heal(Resources.Load<Item>("Prefabs/ItemData/avocado").health);
                 break;
+            case "Cherry":
+                player.Heal(Resources.Load<Item>("Prefabs/ItemData/cherry").health);
+                break;
         }
         SetVisible(null, null, false);
         inventory.cnt--;
