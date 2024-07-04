@@ -121,7 +121,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Nightmare Realms Logo_0
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 103
+        width: 916
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6568cf6579491488db2e5b690ad010a7
+      internalID: 1902670280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +153,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nightmare Realms Logo_0: 1902670280
+      Nightmare Realms Logo_1: 1137415684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

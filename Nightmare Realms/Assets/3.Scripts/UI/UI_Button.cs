@@ -9,7 +9,7 @@ public class UI_Button : MonoBehaviour
 
     public void GameStart()
     {
-        SceneManager.LoadScene("Stage");
+        SceneManager.LoadScene("GameStartCutScene");
     }
 
     public void ResetItem()
