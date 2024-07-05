@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public void SetMonsterCount(int stage)
     {
         int count = Resources.Load<Stage>($"Prefabs/StageData/Stage_{stage}").monsterCount;
+
         monsterCount = count;
         UIManager.instance.currentMonsterCount.text = monsterCount.ToString();
     }

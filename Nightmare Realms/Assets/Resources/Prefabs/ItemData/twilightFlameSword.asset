@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: twilightFlameSword
+  m_Name: TwilightFlameSword
   m_EditorClassIdentifier: 
   sprite: {fileID: -44901977, guid: d006a89d96d034936a016a9d592ae655, type: 3}
   itemName: "\uD669\uD63C\uC758 \uBD88\uAF43 \uAC80"

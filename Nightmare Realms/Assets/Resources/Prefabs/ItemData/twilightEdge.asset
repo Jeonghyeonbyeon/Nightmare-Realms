@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: twilightEdge
+  m_Name: TwilightEdge
   m_EditorClassIdentifier: 
   sprite: {fileID: 235037350, guid: 455eefb1dcc754fea8f5b069a48280bd, type: 3}
   itemName: "\uD669\uD63C\uC758 \uCE7C\uB0A0"

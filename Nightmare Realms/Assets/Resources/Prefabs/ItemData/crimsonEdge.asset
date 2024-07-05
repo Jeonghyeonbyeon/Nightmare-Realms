@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: crimsonEdge
+  m_Name: CrimsonEdge
   m_EditorClassIdentifier: 
   sprite: {fileID: -2058794745, guid: b1c37b24ab50649758814c64c53dfe08, type: 3}
   itemName: "\uD06C\uB9BC\uC2A8 \uC5E3\uC9C0"

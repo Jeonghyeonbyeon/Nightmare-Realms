@@ -11,11 +11,17 @@ public class UIManager : MonoBehaviour
     public Text coinText;
     public Text playerHPText;
     public Text currentMonsterCount;
+    public Text currnetPlayerAttackDamage;
     public Slider playerHP;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    public void UpdatePlayerAttackDamage(int damage)
+    {
+        currnetPlayerAttackDamage.text = $"Damage : {damage}";
     }
 
     public void SetPlayerHP(int cur, int max)

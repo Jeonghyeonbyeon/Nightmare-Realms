@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: dagger
+  m_Name: Dagger
   m_EditorClassIdentifier: 
   sprite: {fileID: 51359853, guid: df130e4e09c784cf39eff936db7bf043, type: 3}
   itemName: "\uB2E8\uAC80"

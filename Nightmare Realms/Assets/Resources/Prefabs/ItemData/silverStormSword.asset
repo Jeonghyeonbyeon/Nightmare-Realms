@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: silverStormSword
+  m_Name: SilverStormSword
   m_EditorClassIdentifier: 
   sprite: {fileID: -1275264096, guid: 76cd0ef2a5dc14e90a815db759f94486, type: 3}
   itemName: "\uC2E4\uBC84 \uC2A4\uD1B0 \uAC80"

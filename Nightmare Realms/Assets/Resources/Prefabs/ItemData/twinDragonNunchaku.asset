@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: twinDragonNunchaku
+  m_Name: TwinDragonNunchaku
   m_EditorClassIdentifier: 
   sprite: {fileID: 76469654, guid: 12d64bd6417a74c108dc19717c52d9a8, type: 3}
   itemName: "\uC30D\uB8E1 \uC30D\uC808\uAD8C"

@@ -88,20 +88,16 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 
     private void UseItem()
     {
-        switch (itemName)
+        if (!string.IsNullOrEmpty(itemName))
         {
-            case "Apple":
-                player.Heal(Resources.Load<Item>("Prefabs/ItemData/apple").health);
-                break;
-            case "Avocado":
-                player.Heal(Resources.Load<Item>("Prefabs/ItemData/avocado").health);
-                break;
-            case "Cherry":
-                player.Heal(Resources.Load<Item>("Prefabs/ItemData/cherry").health);
-                break;
+            Item item = Resources.Load<Item>($"Prefabs/itemData/{itemName}");
+            if (item != null && item.Tear == "Food")
+            {
+                player.Heal(item.health);
+                SetVisible(null, null, false);
+                inventory.cnt--;
+            }
         }
-        SetVisible(null, null, false);
-        inventory.cnt--;
     }
 
     private void DropItem()

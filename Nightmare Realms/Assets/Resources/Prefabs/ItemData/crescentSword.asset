@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: crescentSword
+  m_Name: CrescentSword
   m_EditorClassIdentifier: 
   sprite: {fileID: 1989894396, guid: e5a85e24089a741e5811f53fab07bdfa, type: 3}
   itemName: "\uCD08\uC2B9\uB2EC \uAC80"

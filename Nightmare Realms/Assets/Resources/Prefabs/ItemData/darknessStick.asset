@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: darknessStick
+  m_Name: DarknessStick
   m_EditorClassIdentifier: 
   sprite: {fileID: -1558574571, guid: a75f31d2867b1448e9d2784d706a9740, type: 3}
   itemName: "\uC5B4\uB460\uC758 \uB9C9\uB300\uAE30"

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: greenSlayer
+  m_Name: GreenSlayer
   m_EditorClassIdentifier: 
   sprite: {fileID: 1271663323, guid: e47952ba4205041c7a901b9ea7b7ad11, type: 3}
   itemName: "\uADF8\uB9B0\uC2AC\uB808\uC774\uC5B4"

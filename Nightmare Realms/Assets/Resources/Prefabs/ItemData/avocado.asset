@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: avocado
+  m_Name: Avocado
   m_EditorClassIdentifier: 
   sprite: {fileID: -1347541644, guid: a03c2610221b14940b818fb271b448fa, type: 3}
   itemName: "\uC544\uBCF4\uCE74\uB3C4"

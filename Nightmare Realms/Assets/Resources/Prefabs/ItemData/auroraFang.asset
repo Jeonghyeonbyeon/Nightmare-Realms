@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: auroraFang
+  m_Name: AuroraFang
   m_EditorClassIdentifier: 
   sprite: {fileID: 314324655, guid: 33e78b897a3f546a8912812b577d6997, type: 3}
   itemName: "\uC624\uB85C\uB77C \uC1A1\uACF3\uB2C8"

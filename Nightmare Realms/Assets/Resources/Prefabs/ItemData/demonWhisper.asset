@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: demonWhisper
+  m_Name: DemonWhisper
   m_EditorClassIdentifier: 
   sprite: {fileID: 1989253205, guid: 20277165a4512437a900425411617b26, type: 3}
   itemName: "\uC545\uB9C8\uC758 \uC18D\uC0AD\uC784"

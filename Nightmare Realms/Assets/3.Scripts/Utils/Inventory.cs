@@ -58,6 +58,7 @@ public class Inventory : MonoBehaviour
         {
             isInventory = !isInventory;
             UIManager.instance.inventory.SetActive(isInventory);
+            UIManager.instance.currnetPlayerAttackDamage.gameObject.SetActive(isInventory);
         }
     }
 

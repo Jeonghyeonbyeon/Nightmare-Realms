@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: purpleStream
+  m_Name: PurpleStream
   m_EditorClassIdentifier: 
   sprite: {fileID: 704689474, guid: 266f14ab7927c45b8a80ee324feecf40, type: 3}
   itemName: "\uD37C\uD50C \uC2A4\uD2B8\uB9BC"

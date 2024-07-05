@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: skyHammer
+  m_Name: SkyHammer
   m_EditorClassIdentifier: 
   sprite: {fileID: 814000279, guid: fa0611d530600425fa98422736eaaf68, type: 3}
   itemName: "\uD558\uB298\uC758 \uB9DD\uCE58"

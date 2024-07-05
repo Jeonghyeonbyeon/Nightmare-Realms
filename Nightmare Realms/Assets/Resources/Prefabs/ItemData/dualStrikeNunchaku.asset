@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: dualStrikeNunchaku
+  m_Name: DualStrikeNunchaku
   m_EditorClassIdentifier: 
   sprite: {fileID: -710870003, guid: 39219796033bd484d9a0ab4faf553149, type: 3}
   itemName: "\uC774\uC911 \uD0C0\uACA9 \uC30D\uC808\uAD8C"

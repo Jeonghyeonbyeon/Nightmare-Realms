@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: eclipseBlade
+  m_Name: EclipseBlade
   m_EditorClassIdentifier: 
   sprite: {fileID: 1074154719, guid: 701a5e39c22f34a76bf365c1a0966d93, type: 3}
   itemName: "\uC77C\uC2DD\uC758 \uAC80"

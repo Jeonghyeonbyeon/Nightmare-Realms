@@ -64,20 +64,18 @@ public class PlayerAttack : MonoBehaviour
 
             foreach (Slot s in slot)
             {
-                switch (s.itemName)
+                if (!string.IsNullOrEmpty(s.itemName))
                 {
-                    case "EmeraldSlice":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/emeraldSlice").damage;
-                        break;
-                    case "SunsetBlade":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/sunsetBlade").damage;
-                        break;
-                    case "AbyssSword":
-                        weaponDamage += Resources.Load<Item>($"Prefabs/itemData/abyssSword").damage;
-                        break;
+                    Item item = Resources.Load<Item>($"Prefabs/itemData/{s.itemName}");
+                    if (item != null)
+                    {
+                        weaponDamage += item.damage;
+                        Debug.Log(s.itemName);
+                    }
                 }
             }
             UIManager.instance.SetPlayerHP(player.curHP, player.maxHP);
+            UIManager.instance.UpdatePlayerAttackDamage(weaponDamage);
         }
         OnAttackAnimationEnd();
     }
