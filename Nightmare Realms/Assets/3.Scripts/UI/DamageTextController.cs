@@ -4,12 +4,11 @@ using UnityEngine.UI;
 
 public class DamageTextController : MonoBehaviour
 {
-    [SerializeField] private GameObject damageTextPrefab;
-    [SerializeField] private Canvas worldCanvas;
+    private GameObject damageTextPrefab;
 
     public void ShowDamageText(Vector3 position, int damageAmount)
     {
-        GameObject damageTextInstance = Instantiate(damageTextPrefab, worldCanvas.transform);
+        GameObject damageTextInstance = Instantiate(Resources.Load<GameObject>("Prefabs/Utils/DamageEffectText"), transform.Find("Canvas").transform);
         damageTextInstance.transform.position = position;
 
         Text damgeText = damageTextInstance.GetComponent<Text>();
@@ -34,13 +33,11 @@ public class DamageTextController : MonoBehaviour
             alpha = Mathf.Lerp(1f, 0f, elapsedTime / duration);
             textColor.a = alpha;
             textComponent.color = textColor;
-
             textComponent.transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsedTime / duration);
             textComponent.transform.Translate(Vector3.up * Time.deltaTime);
 
             yield return null;
         }
-
         Destroy(textComponent.gameObject);
     }
 }
