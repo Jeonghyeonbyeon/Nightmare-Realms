@@ -29,35 +29,30 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && !isAttackCheck)
         {
-            Attack();
-        }
-    }
+            playerController.isAttack = true;
+            isAttackCheck = true;
+            anim.Play("Attack");
 
-    private void Attack()
-    {
-        playerController.isAttack = true;
-        isAttackCheck = true;
-        anim.Play("Attack");
-
-        if (sprite.flipX)
-        {
-            attackPoint.localPosition = new Vector3(-0.75f, attackPoint.localPosition.y, attackPoint.localPosition.z);
-        }
-        else
-        {
-            attackPoint.localPosition = new Vector3(0.75f, attackPoint.localPosition.y, attackPoint.localPosition.z);
-        }
-        Collider2D[] hitMonsters = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, monsterLayers);
-
-        foreach (Collider2D monster in hitMonsters)
-        {
-            if (monster.CompareTag("Skull"))
+            if (sprite.flipX)
             {
-                StartCoroutine(monster.GetComponent<Skull>().TakeDamage(playerDamage + weaponDamage));
+                attackPoint.localPosition = new Vector3(-0.75f, attackPoint.localPosition.y, attackPoint.localPosition.z);
             }
-            else if (monster.CompareTag("FireWizardSkull"))
+            else
             {
-                StartCoroutine(monster.GetComponent<FireWizardSkull>().TakeDamage(playerDamage + weaponDamage));
+                attackPoint.localPosition = new Vector3(0.75f, attackPoint.localPosition.y, attackPoint.localPosition.z);
+            }
+            Collider2D[] hitMonsters = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, monsterLayers);
+
+            foreach (Collider2D monster in hitMonsters)
+            {
+                if (monster.CompareTag("Skull"))
+                {
+                    StartCoroutine(monster.GetComponent<Skull>().TakeDamage(playerDamage + weaponDamage));
+                }
+                else if (monster.CompareTag("FireWizardSkull"))
+                {
+                    StartCoroutine(monster.GetComponent<FireWizardSkull>().TakeDamage(playerDamage + weaponDamage));
+                }
             }
         }
 
