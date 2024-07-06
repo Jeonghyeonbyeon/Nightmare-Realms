@@ -70,6 +70,7 @@ public class PlayerAttack : MonoBehaviour
                     if (item != null)
                     {
                         weaponDamage += item.damage;
+                        player.maxHP += item.health;
                         Debug.Log(s.itemName);
                     }
                 }
