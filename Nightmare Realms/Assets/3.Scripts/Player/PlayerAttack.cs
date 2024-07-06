@@ -53,6 +53,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     StartCoroutine(monster.GetComponent<FireWizardSkull>().TakeDamage(playerDamage + weaponDamage));
                 }
+                monster.GetComponent<DamageTextController>().ShowDamageText(new Vector3(Random.Range(monster.transform.position.x - 0.25f, monster.transform.position.x + 0.25f), monster.transform.position.y + 0.1f, 0), playerDamage + weaponDamage);
             }
         }
 
