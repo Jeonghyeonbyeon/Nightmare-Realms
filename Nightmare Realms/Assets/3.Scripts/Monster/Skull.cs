@@ -92,7 +92,7 @@ public class Skull : Monster
     protected override void Dead()
     {
         GameManager.instance.UpdateMonsterCount(1);
-        GetComponent<CoinExplosion>().ExplodeCoins(10, 5f, 2f);
+        GetComponent<CoinExplosion>().ExplodeCoins(5, 5f, 2f);
         Destroy(gameObject);
     }
 

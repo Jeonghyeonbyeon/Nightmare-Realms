@@ -94,6 +94,7 @@ public class FireWizardSkull : Monster
     protected override void Dead()
     {
         GameManager.instance.UpdateMonsterCount(1);
+        GetComponent<CoinExplosion>().ExplodeCoins(10, 5f, 2f);
         Destroy(gameObject);
     }
 
