@@ -4,6 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private SpriteRenderer sprite;
+    private PlayerController player;
     public int curHP;
     public int maxHP;
     private bool isTakingDamage = false;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        player = GetComponent<PlayerController>();
         UIManager.instance.SetPlayerHP(curHP, maxHP);
     }
 
@@ -56,7 +58,7 @@ public class Player : MonoBehaviour
 
     private void Dead()
     {
-        Debug.Log("Player has died");
+        player.isDead = true;
     }
 
     public void Heal(int amount)

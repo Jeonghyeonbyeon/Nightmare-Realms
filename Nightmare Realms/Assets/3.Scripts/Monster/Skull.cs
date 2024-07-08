@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skull : Monster
 {
     public int damage;
-    private float attackCooldown = 3.0f;
+    private float attackCooldown = 2.0f;
     private float lastAttackTime;
 
     protected override void Start()
@@ -92,6 +92,7 @@ public class Skull : Monster
     protected override void Dead()
     {
         GameManager.instance.UpdateMonsterCount(1);
+        GetComponent<CoinExplosion>().ExplodeCoins(10, 5f, 2f);
         Destroy(gameObject);
     }
 

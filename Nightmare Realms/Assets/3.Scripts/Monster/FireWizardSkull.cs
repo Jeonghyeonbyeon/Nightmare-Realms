@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireWizardSkull : Monster
 {
     public int damage;
-    private float attackCooldown = 3.5f;
+    private float attackCooldown = 2.5f;
     private float lastAttackTime;
 
     protected override void Start()
