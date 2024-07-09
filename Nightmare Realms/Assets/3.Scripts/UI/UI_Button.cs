@@ -21,4 +21,6 @@ public class UI_Button : MonoBehaviour
             shop.SetItem();
         }
     }
+
+    public void GameExit() => Application.Quit();
 }
