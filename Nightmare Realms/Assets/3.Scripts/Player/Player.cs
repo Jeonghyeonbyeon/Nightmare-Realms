@@ -7,8 +7,11 @@ public class Player : MonoBehaviour
     private PlayerController player;
     public int curHP;
     public int maxHP;
+    public int curMana;
+    public int maxMana;
     private bool isTakingDamage = false;
     private float damageTimer = 0f;
+    private float Timer = 0f;
     public float damageDuration;  
 
     private void Start()
@@ -30,6 +33,14 @@ public class Player : MonoBehaviour
                 sprite.color = new Color(160 / 255f, 160 / 255f, 160 / 255f);
                 UIManager.instance.SetPlayerHP(curHP, maxHP);
             }
+        }
+        Timer += Time.deltaTime;
+
+        if (Timer >= 1f)
+        {
+            Timer = 0;
+            curMana += 2;
+            UIManager.instance.SetPlayerMana(curMana, maxMana);
         }
     }
 

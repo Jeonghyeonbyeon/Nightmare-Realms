@@ -12,7 +12,8 @@ public class UIManager : MonoBehaviour
     public Text playerHPText;
     public Text currentMonsterCount;
     public Text currnetPlayerAttackDamage;
-    public Slider playerHP;
+    public Slider playerHPSlider;
+    public Slider playerManaSlider;
 
     private void Awake()
     {
@@ -31,7 +32,17 @@ public class UIManager : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().curHP = max;
             cur = max;
         }
-        playerHP.value = (float)cur / max;
+        playerHPSlider.value = (float)cur / max;
         playerHPText.text = $"{cur}/{max}";
+    }
+
+    public void SetPlayerMana(int cur, int max)
+    {
+        if (cur >= max)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().curMana = max;
+            cur = max;
+        }
+        playerManaSlider.value = (float)cur / max;
     }
 }

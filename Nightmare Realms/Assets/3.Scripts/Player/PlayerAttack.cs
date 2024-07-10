@@ -45,13 +45,15 @@ public class PlayerAttack : MonoBehaviour
             MonsterTakeDamage(hitMonsters, 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck)
+        if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck && player.curMana >= 25)
         {
             playerController.isSkill = true;
             isAttackCheck = true;
+            player.curMana -= 25;
 
             Collider2D[] hitMonsters = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), attackRange * 3.5f, monsterLayers);
 
+            UIManager.instance.SetPlayerMana(player.curMana, player.maxMana);
             MonsterTakeDamage(hitMonsters, 2);
         }
 

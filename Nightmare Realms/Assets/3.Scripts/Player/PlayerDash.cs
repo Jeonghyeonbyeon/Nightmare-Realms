@@ -7,7 +7,8 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float dashSpeed = 20f;
     [SerializeField] private float dashTime = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
-    private PlayerController player;
+    private PlayerController playerController;
+    private Player player;
     private float originalGravityScale = 1f;
     private bool isDashing = false;
     private float dashTimeLeft;
@@ -17,14 +18,15 @@ public class PlayerDash : MonoBehaviour
 
     void Start()
     {
-        player = GetComponent<PlayerController>();
+        playerController = GetComponent<PlayerController>();
+        player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         originalGravityScale = rb.gravityScale;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownLeft <= 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownLeft <= 0 && player.curMana >= 10)
         {
             StartDash();
         }
@@ -44,19 +46,21 @@ public class PlayerDash : MonoBehaviour
 
     void StartDash()
     {
+        player.curMana -= 10;
         isDashing = true;
         dashTimeLeft = dashTime;
         dashCooldownLeft = dashCooldown;
         dashDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         rb.gravityScale = 0;
         GetComponent<GhostEffect>().enabled = true;
+        UIManager.instance.SetPlayerMana(player.curMana, player.maxMana);
     }
 
     void Dash()
     {
         if (dashTimeLeft > 0)
         {
-            player.isDash = true;
+            playerController.isDash = true;
             rb.velocity = dashDirection * dashSpeed;
             rb.AddForce(dashDirection * dashSpeed, ForceMode2D.Impulse);
             dashTimeLeft -= Time.deltaTime;
@@ -67,7 +71,7 @@ public class PlayerDash : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.gravityScale = originalGravityScale;
             GetComponent<GhostEffect>().enabled = false;
-            player.isDash = false;
+            playerController.isDash = false;
         }
     }
 }
