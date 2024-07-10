@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Stage_3
   m_EditorClassIdentifier: 
   spawnPos: {x: 427.25, y: 1, z: 0}
-  monsterCount: 0
+  monsterCount: 25

@@ -9,7 +9,8 @@ public class CoinBehavior : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.instance.UpdateCoinCount(1);
-
+            AudioClip coin = SoundManager.instance.coin;
+            SoundManager.instance.PlaySFX(coin);
             Destroy(gameObject);
         }
     }

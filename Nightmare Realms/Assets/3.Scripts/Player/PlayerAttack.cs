@@ -31,7 +31,6 @@ public class PlayerAttack : MonoBehaviour
         {
             playerController.isAttack = true;
             isAttackCheck = true;
-            anim.Play("Attack");
 
             if (sprite.flipX)
             {
@@ -43,18 +42,17 @@ public class PlayerAttack : MonoBehaviour
             }
             Collider2D[] hitMonsters = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, monsterLayers);
 
-            foreach (Collider2D monster in hitMonsters)
-            {
-                if (monster.CompareTag("Skull"))
-                {
-                    StartCoroutine(monster.GetComponent<Skull>().TakeDamage(playerDamage + weaponDamage));
-                }
-                else if (monster.CompareTag("FireWizardSkull"))
-                {
-                    StartCoroutine(monster.GetComponent<FireWizardSkull>().TakeDamage(playerDamage + weaponDamage));
-                }
-                monster.GetComponent<DamageTextController>().ShowDamageText(new Vector3(Random.Range(monster.transform.position.x - 0.25f, monster.transform.position.x + 0.25f), monster.transform.position.y + 0.1f, 0), playerDamage + weaponDamage);
-            }
+            MonsterTakeDamage(hitMonsters, 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck)
+        {
+            playerController.isSkill = true;
+            isAttackCheck = true;
+
+            Collider2D[] hitMonsters = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), attackRange * 3.5f, monsterLayers);
+
+            MonsterTakeDamage(hitMonsters, 2);
         }
 
         if (isWearingItem)
@@ -82,14 +80,31 @@ public class PlayerAttack : MonoBehaviour
         OnAttackAnimationEnd();
     }
 
+    private void MonsterTakeDamage(Collider2D[] hitMonsters, int damageMultiply)
+    {
+        foreach (Collider2D monster in hitMonsters)
+        {
+            if (monster.CompareTag("Skull"))
+            {
+                StartCoroutine(monster.GetComponent<Skull>().TakeDamage((playerDamage + weaponDamage) * damageMultiply));
+            }
+            else if (monster.CompareTag("FireWizardSkull"))
+            {
+                StartCoroutine(monster.GetComponent<FireWizardSkull>().TakeDamage((playerDamage + weaponDamage) * damageMultiply));
+            }
+            monster.GetComponent<DamageTextController>().ShowDamageText(new Vector3(Random.Range(monster.transform.position.x - 0.25f, monster.transform.position.x + 0.25f), monster.transform.position.y + 0.1f, 0), (playerDamage + weaponDamage) * damageMultiply);
+        }
+    }
+
     private void OnAttackAnimationEnd()
     {
-        if (playerController.isAttack)
+        if (playerController.isAttack || playerController.isSkill)
         {
             float animTime = anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1;
             if (animTime >= 0.9f)
             {
                 playerController.isAttack = false;
+                playerController.isSkill = false;
                 isAttackCheck = false;
                 anim.Play("Idle");
             }
@@ -98,6 +113,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.color = Color.gray;
+        Gizmos.DrawWireSphere(new Vector2(transform.position.x, transform.position.y), attackRange * 3.5f);
     }
 }

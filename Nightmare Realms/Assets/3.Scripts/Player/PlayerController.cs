@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool isDash;
     public bool isAttack;
     public bool isDead;
+    public bool isSkill;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         Jump(hit);
 
         if (isDead) anim.Play("Dead");
+        else if (isSkill) anim.Play("Skill_1");
         else if (isAttack) anim.Play("Attack");
         else if (isDash) anim.Play("Dash");
         else if (!hit) anim.Play("Jump");
