@@ -94,6 +94,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 StartCoroutine(monster.GetComponent<FireWizardSkull>().TakeDamage((playerDamage + weaponDamage) * damageMultiply));
             }
+            else if (monster.CompareTag("DarkWizardSkull"))
+            {
+                StartCoroutine(monster.GetComponent<DarkWizardSkull>().TakeDamage((playerDamage + weaponDamage) * damageMultiply));
+            }
             monster.GetComponent<DamageTextController>().ShowDamageText(new Vector3(Random.Range(monster.transform.position.x - 0.25f, monster.transform.position.x + 0.25f), monster.transform.position.y + 0.1f, 0), (playerDamage + weaponDamage) * damageMultiply);
         }
     }

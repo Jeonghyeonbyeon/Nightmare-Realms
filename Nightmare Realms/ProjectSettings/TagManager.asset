@@ -9,6 +9,7 @@ TagManager:
   - Fireball
   - FireWizardSkull
   - Ground
+  - DarkWizardSkull
   layers:
   - Default
   - TransparentFX
