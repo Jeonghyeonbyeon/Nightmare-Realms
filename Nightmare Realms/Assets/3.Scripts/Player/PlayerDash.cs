@@ -49,7 +49,7 @@ public class PlayerDash : MonoBehaviour
 
     void StartDash()
     {
-        StartCoroutine(CoolTimeFunc(2.5f, 2.5f));
+        StartCoroutine(CoolTimeFunc(0.75f, 0.75f));
         AudioClip clip = SoundManager.instance.jump;
         SoundManager.instance.PlaySFX_1(clip);
         isCoolTimeDash = false;

@@ -14,15 +14,18 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        AudioClip clip = SoundManager.instance.bgmStage_1;
+        SoundManager.instance.PlayBGMLoop(clip);
+
+        SetMonsterCount(stage);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Y))
             UpdateMonsterCount(1);
-    }
-
-    private void Start()
-    {
-        SetMonsterCount(stage);
     }
 
     public void SetMonsterCount(int stage)

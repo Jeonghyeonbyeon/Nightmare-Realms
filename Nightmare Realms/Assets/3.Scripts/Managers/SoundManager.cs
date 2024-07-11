@@ -6,21 +6,38 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
     [SerializeField] private AudioSource bgmSource;
-    [SerializeField] private AudioSource sfxSource_1;
-    [SerializeField] private AudioSource sfxSource_2;
+    public AudioSource sfxSource_1;
+    public AudioSource sfxSource_2;
 
+    public AudioClip bgmMain;
+    public AudioClip bgmStage_1;
+    public AudioClip bgmStage_2;
+    public AudioClip bgmStage_3;
+    public AudioClip bgmStage_4;
+    public AudioClip bgmStage_5;
+
+    public AudioClip move;
     public AudioClip coin;
     public AudioClip swordHit;
     public AudioClip jump;
+    public AudioClip click;
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
     {
-        // PlayBGMLoop();
+        PlayBGMLoop(bgmMain);
     }
 
     public void PlayBGMLoop(AudioClip clip)
@@ -38,5 +55,14 @@ public class SoundManager : MonoBehaviour
     public void PlaySFX_2(AudioClip clip)
     {
         sfxSource_2.PlayOneShot(clip);
+    }
+
+    public void PlaySFXLoop(AudioClip clip)
+    {
+        if (sfxSource_1.clip != clip)
+        {
+            sfxSource_1.clip = clip;
+            sfxSource_1.Play();
+        }
     }
 }

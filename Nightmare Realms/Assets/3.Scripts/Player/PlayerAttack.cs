@@ -49,7 +49,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck && player.curMana >= 25 && isCoolTimeAttack)
         {
-            StartCoroutine(CoolTimeFunc(5f, 5f));
+            StartCoroutine(CoolTimeFunc(2.5f, 2.5f));
             isCoolTimeAttack = false;
             playerController.isSkill = true;
             isAttackCheck = true;
