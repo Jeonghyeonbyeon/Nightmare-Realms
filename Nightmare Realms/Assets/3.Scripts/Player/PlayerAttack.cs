@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
     private PlayerController playerController;
     private Player player;
     private bool isAttackCheck;
+    private bool isCoolTimeAttack;
     public bool isWearingItem;
 
     void Start()
@@ -23,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Player>();
+        isCoolTimeAttack = true;
     }
 
     void Update()
@@ -45,8 +47,10 @@ public class PlayerAttack : MonoBehaviour
             MonsterTakeDamage(hitMonsters, 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck && player.curMana >= 25)
+        if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck && player.curMana >= 25 && isCoolTimeAttack)
         {
+            StartCoroutine(CoolTimeFunc(5f, 5f));
+            isCoolTimeAttack = false;
             playerController.isSkill = true;
             isAttackCheck = true;
             player.curMana -= 25;
@@ -114,6 +118,26 @@ public class PlayerAttack : MonoBehaviour
                 isAttackCheck = false;
                 anim.Play("Idle");
             }
+        }
+    }
+
+    IEnumerator CoolTimeFunc(float cooltime, float cooltimeMax)
+    {
+        UIManager.instance.skillCoolText.gameObject.SetActive(true);
+
+        while (cooltime > 0.0f)
+        {
+            if (cooltime <= 0.1f)
+            {
+                cooltime = 0;
+                UIManager.instance.skillCoolText.gameObject.SetActive(false);
+                isCoolTimeAttack = true;
+            }
+            else cooltime -= Time.deltaTime;
+
+            UIManager.instance.skillIcon.fillAmount = cooltime / cooltimeMax;
+            UIManager.instance.skillCoolText.text = cooltime.ToString();
+            yield return new WaitForFixedUpdate();
         }
     }
 

@@ -46,7 +46,11 @@ public class PlayerController : MonoBehaviour
     void Jump(bool hit)
     {
         if (Input.GetKeyDown(KeyCode.Space) && hit)
+        {
+            AudioClip clip = SoundManager.instance.jump;
+            SoundManager.instance.PlaySFX_1(clip);
             rigid.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
+        }
     }
 
     private void OnDrawGizmos()

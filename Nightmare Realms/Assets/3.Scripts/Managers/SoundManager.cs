@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip coin;
     public AudioClip swordHit;
+    public AudioClip jump;
 
     private void Awake()
     {

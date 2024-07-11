@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,12 @@ public class UIManager : MonoBehaviour
     public Text playerHPText;
     public Text currentMonsterCount;
     public Text currnetPlayerAttackDamage;
+    public Text dashCoolText;
+    public Text skillCoolText;
     public Slider playerHPSlider;
     public Slider playerManaSlider;
+    public Image dashIcon;
+    public Image skillIcon;
 
     private void Awake()
     {
