@@ -31,6 +31,8 @@ public class DieLine : MonoBehaviour
             GameObject.Find("Player").GetComponent<Animator>().Play("Idle");
             GameObject.Find("Player").GetComponent<PlayerController>().enabled = false;
             GameObject.Find("Player").GetComponent<PlayerDash>().enabled = false;
+            GameObject.Find("Player").GetComponent<SpriteRenderer>().flipX = false;
+            GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
             Player player = GameObject.Find("Player").GetComponent<Player>();
             if (player.curHP > 1)
                 player.TakeDamage(player.curHP / 2, 0);
