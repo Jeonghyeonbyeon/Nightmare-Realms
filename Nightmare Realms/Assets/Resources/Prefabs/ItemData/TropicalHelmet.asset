@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
+  m_Name: TropicalHelmet
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 843862524, guid: 3808b8f40bff94195a4164e9178f80d0, type: 3}
+  itemName: "\uD2B8\uB85C\uD53C\uCEEC \uD5EC\uBA67"
+  Tear: Rare
+  damage: 0
+  health: 20
+  price: 120

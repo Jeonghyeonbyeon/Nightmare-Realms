@@ -6,9 +6,11 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
     [SerializeField] private AudioSource bgmSource;
-    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource sfxSource_1;
+    [SerializeField] private AudioSource sfxSource_2;
 
     public AudioClip coin;
+    public AudioClip swordHit;
 
     private void Awake()
     {
@@ -27,8 +29,13 @@ public class SoundManager : MonoBehaviour
         bgmSource.Play();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX_1(AudioClip clip)
     {
-        sfxSource.PlayOneShot(clip);
+        sfxSource_1.PlayOneShot(clip);
+    }
+
+    public void PlaySFX_2(AudioClip clip)
+    {
+        sfxSource_2.PlayOneShot(clip);
     }
 }

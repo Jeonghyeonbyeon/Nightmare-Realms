@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
+  m_Name: WhiteRogueJacket
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -629597123, guid: 546952dd8da2a4f128a19ccde8996180, type: 3}
+  itemName: "\uD654\uC774\uD2B8 \uB85C\uADF8 \uC790\uCF13"
+  Tear: Common
+  damage: 0
+  health: 15
+  price: 85

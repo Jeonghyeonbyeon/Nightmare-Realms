@@ -10,7 +10,7 @@ public class CoinBehavior : MonoBehaviour
         {
             GameManager.instance.UpdateCoinCount(1);
             AudioClip coin = SoundManager.instance.coin;
-            SoundManager.instance.PlaySFX(coin);
+            SoundManager.instance.PlaySFX_1(coin);
             Destroy(gameObject);
         }
     }

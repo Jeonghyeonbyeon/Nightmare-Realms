@@ -62,6 +62,9 @@ public abstract class Monster : MonoBehaviour
         if (!transform.Find("Canvas").gameObject.activeSelf)
             transform.Find("Canvas").gameObject.SetActive(true);
 
+        AudioClip clip = SoundManager.instance.swordHit;
+        SoundManager.instance.PlaySFX_2(clip);
+
         curHP -= damage;
         SetHPSliderValue();
 

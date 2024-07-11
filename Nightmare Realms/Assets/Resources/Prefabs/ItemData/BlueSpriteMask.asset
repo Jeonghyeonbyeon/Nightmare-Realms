@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
+  m_Name: BlueSpriteMask
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 220011232, guid: 773b6b78d12f949778e9f2f27fc6ec9a, type: 3}
+  itemName: "\uBE14\uB8E8 \uC2A4\uD504\uB77C\uC774\uD2B8 \uB9C8\uC2A4\uD06C"
+  Tear: Unique
+  damage: 0
+  health: 35
+  price: 275
