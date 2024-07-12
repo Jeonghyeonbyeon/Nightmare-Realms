@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Text currnetPlayerAttackDamage;
     public Text dashCoolText;
     public Text skillCoolText;
+    public Text stageInfoText;
     public Slider playerHPSlider;
     public Slider playerManaSlider;
     public Image dashIcon;
@@ -23,6 +24,17 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        StageInfoUpdate();
+    }
+
+    public void StageInfoUpdate()
+    {
+        int stage = GameManager.instance.stage;
+        stageInfoText.text = $"Stage {stage}\n{Resources.Load<Stage>($"Prefabs/StageData/Stage_{stage}").stageName}";
     }
 
     public void UpdatePlayerAttackDamage(int damage)

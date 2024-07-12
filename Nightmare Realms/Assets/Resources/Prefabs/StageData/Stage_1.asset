@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3fd64a65a064becbc6ff1b507658c0, type: 3}
   m_Name: Stage_1
   m_EditorClassIdentifier: 
+  stageName: "\uD669\uD3D0\uD55C \uB9C8\uC744"
   spawnPos: {x: -185, y: 1, z: 0}
   monsterCount: 20
