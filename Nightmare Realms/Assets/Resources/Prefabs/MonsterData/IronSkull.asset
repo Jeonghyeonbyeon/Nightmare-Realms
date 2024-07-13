@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030100e66e34a438a978a5c4e303b28e, type: 3}
-  m_Name: SkyHammer
+  m_Script: {fileID: 11500000, guid: bff522b16f4e443648758ab2e6415a79, type: 3}
+  m_Name: IronSkull
   m_EditorClassIdentifier: 
-  sprite: {fileID: 814000279, guid: fa0611d530600425fa98422736eaaf68, type: 3}
-  itemName: "\uD558\uB298\uC758 \uB9DD\uCE58"
-  Tear: Common
-  damage: 2
-  health: 0
-  price: 50
+  curHP: 80
+  maxHP: 80

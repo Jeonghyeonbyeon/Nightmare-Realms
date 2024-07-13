@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - DarkWizardSkull
   - LeatherSkull
+  - IronSkull
   layers:
   - Default
   - TransparentFX

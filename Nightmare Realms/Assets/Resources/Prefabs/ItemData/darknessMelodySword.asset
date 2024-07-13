@@ -15,6 +15,6 @@ MonoBehaviour:
   sprite: {fileID: 1589168544, guid: e7fb71c4104d64a95accf8050ff13ece, type: 3}
   itemName: "\uC5B4\uB450\uC6B4 \uC120\uC728\uC758 \uAC80"
   Tear: Legendary
-  damage: 40
+  damage: 20
   health: 0
   price: 325

@@ -15,6 +15,6 @@ MonoBehaviour:
   sprite: {fileID: 941428320, guid: dcaecdb1a147d4cbea5e60d7c8b8d260, type: 3}
   itemName: "\uD478\uB978 \uD3ED\uD48D\uC758 \uAC80"
   Tear: Unique
-  damage: 30
+  damage: 15
   health: 0
   price: 250
