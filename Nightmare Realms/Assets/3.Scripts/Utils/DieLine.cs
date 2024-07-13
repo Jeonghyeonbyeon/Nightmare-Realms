@@ -41,5 +41,10 @@ public class DieLine : MonoBehaviour
 
             timer = true;
         }
+        else if (collision.gameObject.CompareTag("Skull") || collision.gameObject.CompareTag("FireWizardSkull") || collision.gameObject.CompareTag("DarkWizardSkull") || collision.gameObject.CompareTag("LeatherSkull"))
+        {
+            GameManager.instance.UpdateMonsterCount(1);
+            Destroy(collision.gameObject);
+        }
     }
 }

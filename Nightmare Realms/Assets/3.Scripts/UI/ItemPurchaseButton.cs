@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows;
 
 public class ItemPurchaseButton : MonoBehaviour
 {
     [SerializeField] private Image itemImage;
-    [SerializeField] private Transform itemSpawnPoint;
+    [SerializeField] private Transform[] itemSpawnPoint;
     private Item itemData;
 
     void Update()
@@ -27,7 +26,7 @@ public class ItemPurchaseButton : MonoBehaviour
             char firstChar = char.ToUpper(itemData.name[0]);
             string restOfString = itemData.name.Substring(1);
             string itemName = firstChar + restOfString;
-            GameObject item = Instantiate(Resources.Load<GameObject>($"Prefabs/Item/{itemName}"), itemSpawnPoint.position, Quaternion.identity);
+            GameObject item = Instantiate(Resources.Load<GameObject>($"Prefabs/Item/{itemName}"), itemSpawnPoint[GameManager.instance.stage - 1].position, Quaternion.identity);
             item.name = itemName;
         }
         else

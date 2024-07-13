@@ -494,7 +494,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   monsterData: {fileID: 11400000, guid: 6ed2f5231f42b4cd890ea72d01a9b182, type: 2}
-  maxHP: 25
+  maxHP: 0
   curHP: 0
   damage: 15
 --- !u!114 &5392334892073063206
