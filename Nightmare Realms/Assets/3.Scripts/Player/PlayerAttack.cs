@@ -47,13 +47,13 @@ public class PlayerAttack : MonoBehaviour
             MonsterTakeDamage(hitMonsters, 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck && player.curMana >= 25 && isCoolTimeAttack)
+        if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck && player.curMana >= 15 && isCoolTimeAttack)
         {
-            StartCoroutine(CoolTimeFunc(2.5f, 2.5f));
+            StartCoroutine(CoolTimeFunc(2f, 2f));
             isCoolTimeAttack = false;
             playerController.isSkill = true;
             isAttackCheck = true;
-            player.curMana -= 25;
+            player.curMana -= 15;
 
             Collider2D[] hitMonsters = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), attackRange * 3.5f, monsterLayers);
 

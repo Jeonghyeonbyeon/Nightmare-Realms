@@ -15,19 +15,21 @@ public abstract class Monster : MonoBehaviour
 {
     protected State currentState;
     public LayerMask layer;
-    public int maxHP;
     protected Transform playerTransform;
     protected SpriteRenderer sprite;
     protected Animator anim;
     protected Rigidbody2D rigid;
     protected Slider hp;
-    protected int curHP;
+    public MonsterData monsterData;
+    public int maxHP;
+    public int curHP;
     protected float detectionRange;
     protected float attackRange;
     protected float speed;
 
     protected virtual void Start()
     {
+        maxHP = monsterData.maxHP;
         curHP = maxHP;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; 
         sprite = GetComponent<SpriteRenderer>();

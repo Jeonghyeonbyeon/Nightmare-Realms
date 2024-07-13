@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public GameObject skull;
+    public GameObject fireWizardSkull;
+    public GameObject darkWizardSkull;
     public int stage;
     public int coinCount;
     public int monsterCount;

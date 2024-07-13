@@ -29,7 +29,7 @@ public class PlayerDash : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownLeft <= 0 && player.curMana >= 10 && isCoolTimeDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownLeft <= 0 && player.curMana >= 5 && isCoolTimeDash)
         {
             StartDash();
         }
@@ -53,7 +53,7 @@ public class PlayerDash : MonoBehaviour
         AudioClip clip = SoundManager.instance.jump;
         SoundManager.instance.PlaySFX_1(clip);
         isCoolTimeDash = false;
-        player.curMana -= 10;
+        player.curMana -= 5;
         isDashing = true;
         dashTimeLeft = dashTime;
         dashCooldownLeft = dashCooldown;

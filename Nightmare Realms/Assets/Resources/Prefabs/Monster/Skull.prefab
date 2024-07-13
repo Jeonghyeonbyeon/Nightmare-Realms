@@ -190,7 +190,9 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+  monsterData: {fileID: 11400000, guid: 8152ffb2dd55f4328a693a19a7a32f46, type: 2}
   maxHP: 50
+  curHP: 0
   damage: 10
 --- !u!114 &8655923927382679371
 MonoBehaviour:

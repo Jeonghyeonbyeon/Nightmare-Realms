@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     public GameObject inventory;
     public GameObject shop;
+    public GameObject dead;
     public Text coinText;
     public Text playerHPText;
     public Text currentMonsterCount;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     public Text dashCoolText;
     public Text skillCoolText;
     public Text stageInfoText;
+    public Text anyKeyText;
     public Slider playerHPSlider;
     public Slider playerManaSlider;
     public Image dashIcon;

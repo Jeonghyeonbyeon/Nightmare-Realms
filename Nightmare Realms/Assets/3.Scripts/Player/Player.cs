@@ -1,10 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     private SpriteRenderer sprite;
     private PlayerController player;
+    private Animator anim;
     public int curHP;
     public int maxHP;
     public int curMana;
@@ -12,12 +15,13 @@ public class Player : MonoBehaviour
     private bool isTakingDamage = false;
     private float damageTimer = 0f;
     private float Timer = 0f;
-    public float damageDuration;  
+    public float damageDuration;
 
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         player = GetComponent<PlayerController>();
+        anim = GetComponent<Animator>();
         UIManager.instance.SetPlayerHP(curHP, maxHP);
     }
 
@@ -46,7 +50,12 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage, float time)
     {
-        StartCoroutine(TakeDamageCoroutine(damage, time));
+        if (!player.isDead)
+        {
+            StartCoroutine(TakeDamageCoroutine(damage, time));
+            return;
+        }
+        Debug.Log("Player Dead!");
     }
 
     private IEnumerator TakeDamageCoroutine(int damage, float time)
@@ -70,6 +79,57 @@ public class Player : MonoBehaviour
     private void Dead()
     {
         player.isDead = true;
+        GetComponent<PlayerController>().enabled = false;
+        GetComponent<PlayerDash>().enabled = false;
+        GetComponent<PlayerAttack>().enabled = false;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        anim.Play("Dead");
+
+        StartCoroutine(WaitForAnimationAndFadeIn());
+    }
+
+    private IEnumerator WaitForAnimationAndFadeIn()
+    {
+        while (!anim.GetCurrentAnimatorStateInfo(0).IsName("Dead"))
+        {
+            yield return null;
+        }
+        while (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        {
+            yield return null;
+        }
+        StartCoroutine(FadeInDeathUI());
+    }
+
+    private IEnumerator FadeInDeathUI()
+    {
+        UIManager.instance.dead.gameObject.SetActive(true);
+        Image deadImage = UIManager.instance.dead.GetComponent<Image>();
+
+        if (deadImage != null)
+        {
+            float elapsedTime = 0f;
+            float fadeDuration = 5f;
+
+            while (elapsedTime < fadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+                Color newColor = deadImage.color;
+                newColor.a = alpha;
+                deadImage.color = newColor;
+                yield return null;
+            }
+            UIManager.instance.anyKeyText.gameObject.SetActive(true);
+            UIManager.instance.anyKeyText.text = "아무 키나 눌러서 재시작하세요.";
+
+            yield return new WaitUntil(() => Input.anyKeyDown);
+
+            AudioClip clip = SoundManager.instance.bgmMain;
+            SoundManager.instance.PlayBGMLoop(clip);
+            SceneManager.LoadScene("MainScene");
+        }
     }
 
     public void Heal(int amount)
