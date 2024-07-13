@@ -717,6 +717,9 @@ MonoBehaviour:
   swordHit: {fileID: 8300000, guid: 228e648410ba3421ea0302332275f166, type: 3}
   jump: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   click: {fileID: 8300000, guid: e9291d221c730477fa773465b8c7f828, type: 3}
+  shopSpin: {fileID: 8300000, guid: 2bd483764605a49f98a337839dbc4ed5, type: 3}
+  shopItemPurchase: {fileID: 8300000, guid: 41f53a46eba9b467caa9424df2199c51, type: 3}
+  error: {fileID: 8300000, guid: 80ac8096996454a7da13116fe38752a8, type: 3}
 --- !u!4 &643062649
 Transform:
   m_ObjectHideFlags: 0

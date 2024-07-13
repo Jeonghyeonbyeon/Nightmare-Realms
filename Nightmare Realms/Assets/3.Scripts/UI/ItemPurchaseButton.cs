@@ -21,12 +21,19 @@ public class ItemPurchaseButton : MonoBehaviour
     {
         if (GameManager.instance.coinCount >= itemData.price)
         {
+            AudioClip clip = SoundManager.instance.shopItemPurchase;
+            SoundManager.instance.PlaySFX_1(clip);
             GameManager.instance.UpdateCoinCount(-itemData.price);
             char firstChar = char.ToUpper(itemData.name[0]);
             string restOfString = itemData.name.Substring(1);
             string itemName = firstChar + restOfString;
             GameObject item = Instantiate(Resources.Load<GameObject>($"Prefabs/Item/{itemName}"), itemSpawnPoint.position, Quaternion.identity);
             item.name = itemName;
+        }
+        else
+        {
+            AudioClip clip = SoundManager.instance.error;
+            SoundManager.instance.PlaySFX_1(clip);
         }
     }
 }

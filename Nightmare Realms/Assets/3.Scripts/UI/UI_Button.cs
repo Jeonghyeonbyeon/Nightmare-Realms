@@ -21,6 +21,8 @@ public class UI_Button : MonoBehaviour
     {
         if (GameManager.instance.coinCount >= 10)
         {
+            AudioClip clip = SoundManager.instance.shopSpin;
+            SoundManager.instance.PlaySFX_1(clip);
             GameManager.instance.UpdateCoinCount(-10);
             shop = transform.parent.GetComponent<ShopItemSlot>();
             shop.SetItem();

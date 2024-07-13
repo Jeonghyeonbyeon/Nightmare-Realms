@@ -21,6 +21,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip swordHit;
     public AudioClip jump;
     public AudioClip click;
+    public AudioClip shopSpin;
+    public AudioClip shopItemPurchase;
+    public AudioClip error;
 
     private void Awake()
     {
