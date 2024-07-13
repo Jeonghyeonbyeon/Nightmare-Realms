@@ -9,6 +9,8 @@ public class PortalAnimation : MonoBehaviour
     [SerializeField] private float pullSpeed;
     [SerializeField] private float shakeMagnitude;
     [SerializeField] private float shakeSpeed;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float scaleChangeSpeed;
 
     private void Update()
     {
@@ -31,10 +33,9 @@ public class PortalAnimation : MonoBehaviour
             time += Time.deltaTime;
             Vector2 current = Vector2.Lerp(start, target, time * pullSpeed);
             current.y += Mathf.Sin(time * shakeSpeed) * shakeMagnitude;
-            player.transform.Rotate(0f, 0f, 0.003f);
-            player.transform.localScale -= new Vector3(0.0000045f, 0.0000045f, 0f);
+            player.transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+            player.transform.localScale -= new Vector3(scaleChangeSpeed, scaleChangeSpeed, 0f) * Time.deltaTime;
             player.transform.position = current;
-
             yield return null;
         }
         player.transform.position = target;

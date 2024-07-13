@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fireball : MonoBehaviour
+public class Monsterball : MonoBehaviour
 {
     private Player player;
     private Vector3 targetDirection;

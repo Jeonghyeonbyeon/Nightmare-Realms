@@ -77,7 +77,7 @@ public class DarkWizardSkull : Monster
                 {
                     Debug.Log("공격!");
                     GameObject fireball = Instantiate(Resources.Load<GameObject>("Prefabs/Utils/Darkball"), transform.position, Quaternion.identity);
-                    fireball.GetComponent<Fireball>().damage = damage;
+                    fireball.GetComponent<Monsterball>().damage = damage;
                     lastAttackTime = Time.time;
                 }
             }

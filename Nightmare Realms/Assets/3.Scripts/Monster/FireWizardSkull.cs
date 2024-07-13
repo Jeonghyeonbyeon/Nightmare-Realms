@@ -77,7 +77,7 @@ public class FireWizardSkull : Monster
                 {
                     Debug.Log("공격!");
                     GameObject fireball = Instantiate(Resources.Load<GameObject>("Prefabs/Utils/Fireball"), transform.position, Quaternion.identity);
-                    fireball.GetComponent<Fireball>().damage = damage;
+                    fireball.GetComponent<Monsterball>().damage = damage;
                     lastAttackTime = Time.time;
                 }
             }

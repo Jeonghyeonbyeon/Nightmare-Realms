@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff522b16f4e443648758ab2e6415a79, type: 3}
   m_Name: IronSkull
   m_EditorClassIdentifier: 
-  curHP: 80
-  maxHP: 80
+  curHP: 100
+  maxHP: 100

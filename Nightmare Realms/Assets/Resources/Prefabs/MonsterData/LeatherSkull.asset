@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff522b16f4e443648758ab2e6415a79, type: 3}
   m_Name: LeatherSkull
   m_EditorClassIdentifier: 
-  curHP: 45
-  maxHP: 45
+  curHP: 50
+  maxHP: 50

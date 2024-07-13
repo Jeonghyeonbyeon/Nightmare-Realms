@@ -791,6 +791,8 @@ MonoBehaviour:
   pullSpeed: 1
   shakeMagnitude: 0.15
   shakeSpeed: 30
+  rotationSpeed: 3
+  scaleChangeSpeed: 0.0025
 --- !u!61 &414368530
 BoxCollider2D:
   m_ObjectHideFlags: 0
