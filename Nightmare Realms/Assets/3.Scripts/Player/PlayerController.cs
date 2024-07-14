@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
 
         rigid.velocity = new Vector2(x * speed, rigid.velocity.y);
 

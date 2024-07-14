@@ -13,6 +13,8 @@ TagManager:
   - LeatherSkull
   - IronSkull
   - SteelSkull
+  - Bones
+  - NightmareSkull
   layers:
   - Default
   - TransparentFX

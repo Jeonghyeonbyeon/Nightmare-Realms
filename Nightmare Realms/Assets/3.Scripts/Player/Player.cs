@@ -143,4 +143,13 @@ public class Player : MonoBehaviour
 
         UIManager.instance.SetPlayerHP(curHP, maxHP);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bones"))
+        {
+            TakeDamage(20, 0f);
+            Destroy(collision.gameObject);
+        }
+    }
 }
