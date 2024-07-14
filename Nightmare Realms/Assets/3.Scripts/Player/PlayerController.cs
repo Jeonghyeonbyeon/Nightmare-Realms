@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
 
         rigid.velocity = new Vector2(x * speed, rigid.velocity.y);
 
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump(bool hit)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && hit)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && hit)
         {
             AudioClip clip = SoundManager.instance.jump;
             SoundManager.instance.PlaySFX_1(clip);

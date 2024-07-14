@@ -9,6 +9,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float dashTime = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
     private PlayerController playerController;
+    private SpriteRenderer sprite;
     private Player player;
     private Rigidbody2D rb;
     private Vector2 dashDirection;
@@ -21,6 +22,7 @@ public class PlayerDash : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        sprite = GetComponent<SpriteRenderer>();
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         originalGravityScale = rb.gravityScale;
@@ -29,7 +31,7 @@ public class PlayerDash : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownLeft <= 0 && player.curMana >= 5 && isCoolTimeDash)
+        if (Input.GetKeyDown(KeyCode.C) && dashCooldownLeft <= 0 && player.curMana >= 5 && isCoolTimeDash)
         {
             StartDash();
         }

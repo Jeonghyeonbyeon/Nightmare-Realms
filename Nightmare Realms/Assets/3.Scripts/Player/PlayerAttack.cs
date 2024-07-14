@@ -29,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isAttackCheck)
+        if (Input.GetKeyDown(KeyCode.Z) && !isAttackCheck)
         {
             playerController.isAttack = true;
             isAttackCheck = true;
@@ -47,7 +47,7 @@ public class PlayerAttack : MonoBehaviour
             MonsterTakeDamage(hitMonsters, 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !isAttackCheck && player.curMana >= 15 && isCoolTimeAttack)
+        if (Input.GetKeyDown(KeyCode.X) && !isAttackCheck && player.curMana >= 15 && isCoolTimeAttack)
         {
             StartCoroutine(CoolTimeFunc(2f, 2f));
             isCoolTimeAttack = false;
