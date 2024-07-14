@@ -708,8 +708,8 @@ MonoBehaviour:
   sfxSource_2: {fileID: 1696935173}
   bgmMain: {fileID: 8300000, guid: c3fedb7be319040328c8fe4f1b4ad398, type: 3}
   bgmStage_1: {fileID: 8300000, guid: 48bde906b25144d19b5393133fd7eb7d, type: 3}
-  bgmStage_2: {fileID: 0}
-  bgmStage_3: {fileID: 0}
+  bgmStage_2: {fileID: 8300000, guid: f9617e843d8054a8d99096af5305397a, type: 3}
+  bgmStage_3: {fileID: 8300000, guid: 87f7f1ca3e9b84f57bf4e2cca82104ad, type: 3}
   bgmStage_4: {fileID: 0}
   bgmStage_5: {fileID: 0}
   move: {fileID: 8300000, guid: b0ab2fd63ed2d4d09b528b576ae461ac, type: 3}
@@ -720,6 +720,7 @@ MonoBehaviour:
   shopSpin: {fileID: 8300000, guid: 2bd483764605a49f98a337839dbc4ed5, type: 3}
   shopItemPurchase: {fileID: 8300000, guid: 41f53a46eba9b467caa9424df2199c51, type: 3}
   error: {fileID: 8300000, guid: 131f7b560a9aa47d8ab8831b2ec74d00, type: 3}
+  takeDamage: {fileID: 8300000, guid: ad4e2e3d69b604bc9b1064ad8be314fc, type: 3}
 --- !u!4 &643062649
 Transform:
   m_ObjectHideFlags: 0

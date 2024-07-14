@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     {
         if (!player.isDead)
         {
+            //AudioClip clip = SoundManager.instance.takeDamage;
+            //SoundManager.instance.PlaySFX_1(clip);
             StartCoroutine(TakeDamageCoroutine(damage, time));
             return;
         }

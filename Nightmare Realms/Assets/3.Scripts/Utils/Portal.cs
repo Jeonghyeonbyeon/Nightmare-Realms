@@ -11,6 +11,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private float shakeSpeed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float scaleChangeSpeed;
+    private AudioClip clip;
 
     private void Update()
     {
@@ -64,8 +65,20 @@ public class Portal : MonoBehaviour
             GameObject.FindGameObjectWithTag("MainCamera").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
             GameManager.instance.SetMonsterCount(GameManager.instance.stage);
             UIManager.instance.StageInfoUpdate();
+            SoundChange();
             gameObject.SetActive(false);
         }
+    }
+
+    private void SoundChange()
+    {
+        switch (GameManager.instance.stage)
+        {
+            case 1: break;
+            case 2: clip = SoundManager.instance.bgmStage_2; break;
+            case 3: clip = SoundManager.instance.bgmStage_3; break;
+        }
+        SoundManager.instance.PlayBGMLoop(clip);
     }
 
     private void OnDrawGizmos()

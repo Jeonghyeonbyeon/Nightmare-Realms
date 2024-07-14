@@ -12,6 +12,7 @@ TagManager:
   - DarkWizardSkull
   - LeatherSkull
   - IronSkull
+  - SteelSkull
   layers:
   - Default
   - TransparentFX

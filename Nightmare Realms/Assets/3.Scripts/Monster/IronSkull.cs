@@ -92,7 +92,7 @@ public class IronSkull : Monster
     protected override void Dead()
     {
         GameManager.instance.UpdateMonsterCount(1);
-        GetComponent<CoinExplosion>().ExplodeCoins(25, 5f, 2f);
+        GetComponent<CoinExplosion>().ExplodeCoins(25, 7.5f, 2f);
         Destroy(gameObject);
     }
 

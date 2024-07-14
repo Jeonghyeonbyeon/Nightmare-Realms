@@ -24,6 +24,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip shopSpin;
     public AudioClip shopItemPurchase;
     public AudioClip error;
+    //public AudioClip takeDamage;
 
     private void Awake()
     {
