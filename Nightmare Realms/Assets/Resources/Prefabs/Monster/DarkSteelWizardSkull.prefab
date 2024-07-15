@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 5262734424838613053}
   m_Layer: 6
   m_Name: DarkSteelWizardSkull
-  m_TagString: DarkWizardSkull
+  m_TagString: DarkSteelWizardSkull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

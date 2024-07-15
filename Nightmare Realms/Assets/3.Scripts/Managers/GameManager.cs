@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Y))
             UpdateMonsterCount(1);
+        else if (Input.GetKeyDown(KeyCode.Q))
+            stage++;
     }
 
     public void SetMonsterCount(int stage)

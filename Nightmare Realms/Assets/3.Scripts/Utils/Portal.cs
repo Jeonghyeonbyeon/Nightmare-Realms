@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     [SerializeField] private Transform portalPoint;
+    [SerializeField] private GameObject boss;
+    [SerializeField] private UI_Button shopUI;
     [SerializeField] private float radius;
     [SerializeField] private float pullSpeed;
     [SerializeField] private float shakeMagnitude;
@@ -60,8 +62,8 @@ public class Portal : MonoBehaviour
             {
                 player.transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_Boss").spawnPos;
                 GameObject.FindGameObjectWithTag("MainCamera").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_Boss").spawnPos;
-                GameObject.FindGameObjectWithTag("NightmareSkull").gameObject.SetActive(true);
                 UIManager.instance.bossHPSlider.gameObject.SetActive(true);
+                boss.SetActive(true);
             }
             else
             { 
@@ -73,6 +75,8 @@ public class Portal : MonoBehaviour
             player.GetComponent<PlayerController>().enabled = true;
             player.GetComponent<PlayerDash>().enabled = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
+            player.GetComponent<Player>().Heal(20);
+            shopUI.ResetItem();
             GameManager.instance.SetMonsterCount(GameManager.instance.stage);
             UIManager.instance.StageInfoUpdate();
             SoundChange();
