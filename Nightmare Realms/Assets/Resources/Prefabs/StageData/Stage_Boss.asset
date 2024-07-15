@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Stage_Boss
   m_EditorClassIdentifier: 
   stageName: "\uC5B4\uB460\uC758 \uC9C0\uD558 \uAC10\uC625"
-  spawnPos: {x: 1088.4, y: 2, z: 0}
+  spawnPos: {x: 1088.4, y: 1.25, z: 0}
   monsterCount: 1

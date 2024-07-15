@@ -60,6 +60,8 @@ public class Portal : MonoBehaviour
             {
                 player.transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_Boss").spawnPos;
                 GameObject.FindGameObjectWithTag("MainCamera").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_Boss").spawnPos;
+                GameObject.FindGameObjectWithTag("NightmareSkull").gameObject.SetActive(true);
+                UIManager.instance.bossHPSlider.gameObject.SetActive(true);
             }
             else
             { 

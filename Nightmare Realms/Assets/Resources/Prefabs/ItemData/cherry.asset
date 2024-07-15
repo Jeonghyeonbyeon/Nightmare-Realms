@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: "\uCCB4\uB9AC"
   Tear: Food
   damage: 0
-  health: 30
-  price: 50
+  health: 50
+  price: 40

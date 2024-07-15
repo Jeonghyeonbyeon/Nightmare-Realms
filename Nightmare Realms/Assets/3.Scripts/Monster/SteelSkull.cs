@@ -92,7 +92,7 @@ public class SteelSkull : Monster
     protected override void Dead()
     {
         GameManager.instance.UpdateMonsterCount(1);
-        GetComponent<CoinExplosion>().ExplodeCoins(40, 7.5f, 2f);
+        GetComponent<CoinExplosion>().ExplodeCoins(50, 7.5f, 2f);
         Destroy(gameObject);
     }
 

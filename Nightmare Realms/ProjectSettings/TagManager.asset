@@ -15,6 +15,7 @@ TagManager:
   - SteelSkull
   - Bones
   - NightmareSkull
+  - DarkSkull
   layers:
   - Default
   - TransparentFX

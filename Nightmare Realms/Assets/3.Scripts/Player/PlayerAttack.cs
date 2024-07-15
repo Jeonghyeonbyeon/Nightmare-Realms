@@ -114,6 +114,14 @@ public class PlayerAttack : MonoBehaviour
             {
                 StartCoroutine(monster.GetComponent<SteelSkull>().TakeDamage((playerDamage + weaponDamage) * damageMultiply));
             }
+            else if (monster.CompareTag("DarkSkull"))
+            {
+                StartCoroutine(monster.GetComponent<DarkSkull>().TakeDamage((playerDamage + weaponDamage) * damageMultiply));
+            }
+            else if (monster.CompareTag("DarkSteelWizardSkull"))
+            {
+                StartCoroutine(monster.GetComponent<DarkSteelWizardSkull>().TakeDamage((playerDamage + weaponDamage) * damageMultiply));
+            }
             else if (monster.CompareTag("NightmareSkull"))
             {
                 StartCoroutine(monster.GetComponent<BossController>().TakeDamage((playerDamage + weaponDamage) * damageMultiply));
