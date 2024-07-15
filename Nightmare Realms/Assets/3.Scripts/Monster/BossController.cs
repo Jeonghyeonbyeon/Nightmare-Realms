@@ -26,6 +26,8 @@ public class BossController : MonoBehaviour
 
     IEnumerator Patterns()
     {
+        yield return new WaitForSecondsRealtime(5f);
+
         while (true)
         {
             yield return new WaitForSeconds(10f);
