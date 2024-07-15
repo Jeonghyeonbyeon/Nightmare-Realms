@@ -3,20 +3,25 @@ using System.Collections;
 
 public class BossPattern1 : MonoBehaviour
 {
-    public Transform[] movePoints;
-    public GameObject bonePrefab; 
-    public float moveSpeed = 5f;
-    public float fireInterval = 0.5f;
+    [SerializeField] private Transform[] movePoints;
+    [SerializeField] private GameObject bonePrefab;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float fireInterval = 0.5f;
+    private Animator anim;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         StartCoroutine(PatternRoutine());
     }
 
     public IEnumerator PatternRoutine()
     {
-        for (int i = 0; i < 3; i++) 
+        for (int i = 0; i < 3; i++)
         {
+            anim.Play("Idle");
+
             Transform targetPoint = movePoints[Random.Range(0, movePoints.Length)];
             yield return StartCoroutine(MoveToPoint(targetPoint));
             yield return StartCoroutine(FireBones());
@@ -34,6 +39,8 @@ public class BossPattern1 : MonoBehaviour
 
     IEnumerator FireBones()
     {
+        anim.Play("Attack");
+
         for (float i = 0; i < 360; i += 22.5f) 
         {
             Quaternion rotation = Quaternion.Euler(0, 0, i);

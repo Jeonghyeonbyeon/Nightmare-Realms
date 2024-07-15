@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7622048298180643061}
   m_Layer: 0
   m_Name: Bones
-  m_TagString: Untagged
+  m_TagString: Bones
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 347082255
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 827769486, guid: 242717e8db3e74590b941c12667f61d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

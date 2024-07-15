@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public Text anyKeyText;
     public Slider playerHPSlider;
     public Slider playerManaSlider;
+    public Slider bossHPSlider;
     public Image dashIcon;
     public Image skillIcon;
 
@@ -36,7 +37,14 @@ public class UIManager : MonoBehaviour
     public void StageInfoUpdate()
     {
         int stage = GameManager.instance.stage;
-        stageInfoText.text = $"Stage {stage}\n{Resources.Load<Stage>($"Prefabs/StageData/Stage_{stage}").stageName}";
+        if (stage > 4)
+        {
+            stageInfoText.text = $"Stage Boss\n{Resources.Load<Stage>($"Prefabs/StageData/Stage_Boss").stageName}";
+        }
+        else
+        {
+            stageInfoText.text = $"Stage {stage}\n{Resources.Load<Stage>($"Prefabs/StageData/Stage_{stage}").stageName}";
+        }
     }
 
     public void UpdatePlayerAttackDamage(int damage)

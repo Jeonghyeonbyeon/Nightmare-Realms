@@ -38,14 +38,10 @@ public class DieLine : MonoBehaviour
                 player.TakeDamage(player.curHP / 2, 0);
             else
                 player.TakeDamage(1, 0);
-
             timer = true;
         }
-        else if (collision.gameObject.CompareTag("Skull") ||
-                 collision.gameObject.CompareTag("FireWizardSkull") ||
-                 collision.gameObject.CompareTag("DarkWizardSkull") ||
-                 collision.gameObject.CompareTag("LeatherSkull") ||
-                 collision.gameObject.CompareTag("SteelSkull")) { 
+        else if (collision.gameObject.GetComponent<Monster>())
+        {
             GameManager.instance.UpdateMonsterCount(1);
             Destroy(collision.gameObject);
         }

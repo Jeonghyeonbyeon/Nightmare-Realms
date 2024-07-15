@@ -194,7 +194,7 @@ MonoBehaviour:
   monsterData: {fileID: 11400000, guid: 99f48413ab8da49dda0417ebab67d65c, type: 2}
   maxHP: 0
   curHP: 0
-  damage: 25
+  damage: 20
 --- !u!114 &778169010118288713
 MonoBehaviour:
   m_ObjectHideFlags: 0

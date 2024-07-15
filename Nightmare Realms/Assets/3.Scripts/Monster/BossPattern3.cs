@@ -3,12 +3,20 @@ using System.Collections;
 
 public class BossPattern3 : MonoBehaviour
 {
-    public GameObject boneProjectile;
-    public float offsetDistance = 2f;
-    public float fireSpeed = 10f;
+    [SerializeField] private GameObject boneProjectile;
+    [SerializeField] private float offsetDistance = 2f;
+    [SerializeField] private float fireSpeed = 10f;
+    private Animator anim;
+
+    public void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void Pattern(Vector3 playerPosition)
     {
+        anim.Play("Attack");
+
         StartCoroutine(FireBones());
     }
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BossPattern2 : MonoBehaviour
 {
-    public float chargeSpeed = 10f;
+    [SerializeField] private float chargeSpeed = 10f;
     private Vector3 targetPosition;
 
     public void Pattern(Vector3 playerPosition)

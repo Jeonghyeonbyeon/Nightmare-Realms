@@ -56,13 +56,21 @@ public class Portal : MonoBehaviour
         {
             GameManager.instance.stage += 1;
             GameObject player = GameObject.Find("Player").gameObject;
-            player.transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
+            if (GameManager.instance.stage > 4)
+            {
+                player.transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_Boss").spawnPos;
+                GameObject.FindGameObjectWithTag("MainCamera").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_Boss").spawnPos;
+            }
+            else
+            { 
+                player.transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
+                GameObject.FindGameObjectWithTag("MainCamera").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
+            }
             player.transform.rotation = Quaternion.identity;
             player.transform.localScale = new Vector3(1, 1, 1);
             player.GetComponent<PlayerController>().enabled = true;
             player.GetComponent<PlayerDash>().enabled = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
-            GameObject.FindGameObjectWithTag("MainCamera").transform.position = Resources.Load<Stage>($"Prefabs/StageData/Stage_{GameManager.instance.stage}").spawnPos;
             GameManager.instance.SetMonsterCount(GameManager.instance.stage);
             UIManager.instance.StageInfoUpdate();
             SoundChange();
@@ -77,6 +85,8 @@ public class Portal : MonoBehaviour
             case 1: break;
             case 2: clip = SoundManager.instance.bgmStage_2; break;
             case 3: clip = SoundManager.instance.bgmStage_3; break;
+            case 4: break;
+            case 5: break;
         }
         SoundManager.instance.PlayBGMLoop(clip);
     }

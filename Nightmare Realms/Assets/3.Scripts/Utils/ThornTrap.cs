@@ -20,5 +20,10 @@ public class ThornTrap : MonoBehaviour
             player.GetComponent<Player>().TakeDamage(trapDamage, 0);
             player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
+        else if (collision.gameObject.GetComponent<Monster>())
+        {
+            GameManager.instance.UpdateMonsterCount(1);
+            Destroy(collision.gameObject);
+        }
     }
 }

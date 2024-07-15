@@ -52,8 +52,6 @@ public class Player : MonoBehaviour
     {
         if (!player.isDead)
         {
-            //AudioClip clip = SoundManager.instance.takeDamage;
-            //SoundManager.instance.PlaySFX_1(clip);
             StartCoroutine(TakeDamageCoroutine(damage, time));
             return;
         }
@@ -148,7 +146,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bones"))
         {
-            TakeDamage(20, 0f);
+            TakeDamage(10, 0f);
             Destroy(collision.gameObject);
         }
     }
