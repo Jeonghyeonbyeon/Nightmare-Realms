@@ -14,6 +14,15 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            BossController boss = GameObject.Find("NightmareSkull").GetComponent<BossController>();
+            StartCoroutine(boss.TakeDamage(3000));
+        }
+    }
+
     private void Start()
     {
         AudioClip clip = SoundManager.instance.bgmStage_1;

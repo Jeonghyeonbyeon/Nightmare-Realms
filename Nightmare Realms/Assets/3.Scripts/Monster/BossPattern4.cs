@@ -4,7 +4,7 @@ using System.Collections;
 public class BossPattern4 : MonoBehaviour
 {
     [SerializeField] private Transform[] targetPoints; 
-    [SerializeField] private GameObject boneProjectile;
+    [SerializeField] private GameObject bonePrefab;
     [SerializeField] private float xRange = 30f; 
     [SerializeField] private float boneSpacing = 1f; 
     [SerializeField] private float yOffset = 20f;
@@ -32,9 +32,10 @@ public class BossPattern4 : MonoBehaviour
             if (Mathf.Abs(x) > boneSpacing)
             {
                 spawnPosition = new Vector3(targetPoint.position.x + x, targetPoint.position.y + yOffset, targetPoint.position.z);
-                Instantiate(boneProjectile, spawnPosition, Quaternion.identity);
+                Instantiate(bonePrefab, spawnPosition, Quaternion.identity);
             }
         }
+        anim.Play("Idle");
         yield return null;
     }
 }
