@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapDamage: 5
-  jumpPower: 10
+  jumpPower: 20
 --- !u!1 &2487760706337751864
 GameObject:
   m_ObjectHideFlags: 0

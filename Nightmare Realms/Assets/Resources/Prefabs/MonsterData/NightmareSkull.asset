@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff522b16f4e443648758ab2e6415a79, type: 3}
   m_Name: NightmareSkull
   m_EditorClassIdentifier: 
-  curHP: 3000
-  maxHP: 3000
+  curHP: 12500
+  maxHP: 12500

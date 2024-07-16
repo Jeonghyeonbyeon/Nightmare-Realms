@@ -6,12 +6,14 @@ public class BossController : MonoBehaviour
     [SerializeField] private BossPattern1 pattern1;
     [SerializeField] private BossPattern2 pattern2;
     [SerializeField] private BossPattern3 pattern3;
+    [SerializeField] private BossPattern4 pattern4;
     [SerializeField] private MonsterData monsterData;
     [SerializeField] private Transform player;
     private SpriteRenderer sprite;
     private Animator anim;
     public int curHP;
     public int maxHP;
+    private float time = 10f;
 
     private void Start()
     {
@@ -26,13 +28,22 @@ public class BossController : MonoBehaviour
 
     IEnumerator Patterns()
     {
-        yield return new WaitForSecondsRealtime(5f);
-
         while (true)
         {
-            yield return new WaitForSeconds(10f);
+            if (curHP <= (maxHP / 2))
+            {
+                Color color = Color.red;
+                sprite.color = color;
+                time = 5f;
+            }
+            else
+            {
+                time = 10f;
+            }
+
+            yield return new WaitForSeconds(time);
             anim.Play("Idle");
-            int index = Random.Range(0, 3);
+            int index = Random.Range(0, 4);
             switch (index)
             {
                 case 0:
@@ -43,6 +54,9 @@ public class BossController : MonoBehaviour
                     break;
                 case 2:
                     pattern3.Pattern(player.position);
+                    break;
+                case 3:
+                    pattern4.Pattern();
                     break;
             }
         }
@@ -79,6 +93,6 @@ public class BossController : MonoBehaviour
 
     private void Dead()
     {
-
+        
     }
 }

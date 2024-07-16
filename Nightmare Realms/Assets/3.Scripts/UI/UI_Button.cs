@@ -29,6 +29,12 @@ public class UI_Button : MonoBehaviour
         }
     }
 
+    public void ResetItemNextScene()
+    {
+        shop = transform.parent.GetComponent<ShopItemSlot>();
+        shop.SetItem();
+    }
+
     public void GameExit()
     {
         Application.Quit();

@@ -14,7 +14,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip bgmStage_2;
     public AudioClip bgmStage_3;
     public AudioClip bgmStage_4;
-    public AudioClip bgmStage_5;
+    public AudioClip bgmStage_Boss;
 
     public AudioClip move;
     public AudioClip coin;

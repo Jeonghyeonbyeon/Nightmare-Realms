@@ -5,7 +5,7 @@ using UnityEngine;
 public class DarkSteelWizardSkull : Monster
 {
     public int damage;
-    private float attackCooldown = 3f;
+    private float attackCooldown = 2.25f;
     private float lastAttackTime;
 
     protected override void Start()
@@ -35,8 +35,8 @@ public class DarkSteelWizardSkull : Monster
 
     protected override void Chase()
     {
-        RaycastHit2D right = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 0.25f), transform.right, 0.7f, LayerMask.GetMask("Ground"));
-        RaycastHit2D left = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 0.25f), -transform.right, 0.7f, LayerMask.GetMask("Ground"));
+        RaycastHit2D right = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 0.75f), transform.right, 1f, LayerMask.GetMask("Ground"));
+        RaycastHit2D left = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 0.75f), -transform.right, 1f, LayerMask.GetMask("Ground"));
 
         anim.Play("Chase");
 
@@ -105,9 +105,9 @@ public class DarkSteelWizardSkull : Monster
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - 0.25f), transform.right * 0.7f);
+        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - 0.75f), transform.right * 1f);
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - 0.25f), -transform.right * 0.7f);
+        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - 0.75f), -transform.right * 1f);
     }
 }
 
