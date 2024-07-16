@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool isAttack;
     public bool isDead;
     public bool isSkill;
+    private bool isJump;
 
     void Start()
     {
@@ -25,15 +26,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
-
         rigid.velocity = new Vector2(x * speed, rigid.velocity.y);
-
+        sprite.flipX = x != 0 ? x < 0 : sprite.flipX;
         bool hit = Physics2D.OverlapBox(new Vector2(transform.position.x, transform.position.y - 0.75f), new Vector2(0.6f, 1), 1, layer);
 
-        sprite.flipX = x != 0 ? x < 0 : sprite.flipX;
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && hit && !isJump)
+        {
+            AudioClip clip = SoundManager.instance.jump;
+            SoundManager.instance.PlaySFX_1(clip);
+            rigid.velocity = new Vector2(rigid.velocity.x, 0); 
+            rigid.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
+            isJump = true; 
+        }
+        UpdateAnimation(hit, x);
+    }
 
-        Jump(hit);
-
+    void UpdateAnimation(bool hit, float x)
+    {
         if (isDead) anim.Play("Dead");
         else if (isSkill) anim.Play("Skill_1");
         else if (isAttack) anim.Play("Attack");
@@ -42,6 +51,15 @@ public class PlayerController : MonoBehaviour
         else if (x != 0) anim.Play("Move");
         else anim.Play("Idle");
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isJump = false;
+        }
+    }
+
 
     void Jump(bool hit)
     {
