@@ -26,7 +26,7 @@ public class SteelSkull : Monster
     protected override void Idle()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, detectionRange, layer);
-        if (hit != null)
+        if (hit != null)        
         {
             ChangeStateTo(State.Chase);
         }
@@ -37,6 +37,7 @@ public class SteelSkull : Monster
     {
         RaycastHit2D right = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 1f), transform.right, 1.5f, LayerMask.GetMask("Ground"));
         RaycastHit2D left = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 1f), -transform.right, 1.5f, LayerMask.GetMask("Ground"));
+        RaycastHit2D groundHit = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 1.25f), -transform.up, 0.75f, LayerMask.GetMask("Ground"));
 
         anim.Play("Chase");
 
@@ -46,10 +47,10 @@ public class SteelSkull : Monster
             Vector2 direction = (playerTransform.position - transform.position).normalized;
             rigid.velocity = new Vector2(direction.x * speed, rigid.velocity.y);
         }
-        else
+        else if (groundHit)
         {
             Debug.Log("점프!");
-            rigid.AddForce(transform.up * 0.75f, ForceMode2D.Impulse);
+            rigid.AddForce(transform.up * 1.15f, ForceMode2D.Impulse);
         }
         Collider2D hit = Physics2D.OverlapCircle(transform.position, attackRange, layer);
         if (hit != null)
@@ -106,5 +107,7 @@ public class SteelSkull : Monster
         Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - 1f), transform.right * 1.5f);
         Gizmos.color = Color.green;
         Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - 1f), -transform.right * 1.5f);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - 1.25f), -transform.up * 0.75f);
     }
 }

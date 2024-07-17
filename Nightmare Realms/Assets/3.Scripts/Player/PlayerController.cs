@@ -29,14 +29,14 @@ public class PlayerController : MonoBehaviour
         rigid.velocity = new Vector2(x * speed, rigid.velocity.y);
         sprite.flipX = x != 0 ? x < 0 : sprite.flipX;
         bool hit = Physics2D.OverlapBox(new Vector2(transform.position.x, transform.position.y - 0.75f), new Vector2(0.6f, 1), 1, layer);
+        RaycastHit2D raycastHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), -transform.up * 0.75f, 1, layer);
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && hit && !isJump)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && hit && raycastHit)
         {
             AudioClip clip = SoundManager.instance.jump;
             SoundManager.instance.PlaySFX_1(clip);
             rigid.velocity = new Vector2(rigid.velocity.x, 0); 
             rigid.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
-            isJump = true; 
         }
         UpdateAnimation(hit, x);
     }
@@ -52,28 +52,11 @@ public class PlayerController : MonoBehaviour
         else anim.Play("Idle");
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isJump = false;
-        }
-    }
-
-
-    void Jump(bool hit)
-    {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && hit)
-        {
-            AudioClip clip = SoundManager.instance.jump;
-            SoundManager.instance.PlaySFX_1(clip);
-            rigid.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
-        }
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y - 0.75f), new Vector2(0.6f, 1));
+        Gizmos.color = Color.black;
+        Gizmos.DrawRay(transform.position, -transform.position * 0.75f);
     }
 }

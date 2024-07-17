@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class CoinBehavior : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] private LayerMask layer;
+
+    private void Update()
     {
-        if (other.CompareTag("Player"))
+        Collider2D hit = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 0.5f, layer);
+
+        if (hit != null)
         {
             GameManager.instance.UpdateCoinCount(1);
             AudioClip coin = SoundManager.instance.coin;
             SoundManager.instance.PlaySFX_1(coin);
             Destroy(gameObject);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(new Vector2(transform.position.x, transform.position.y), 0.5f);
     }
 }
