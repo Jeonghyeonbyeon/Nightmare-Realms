@@ -118,16 +118,19 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
     {
         if (visible)
         {
-            dragImageComponent.sprite = slot.sprite;
-            dragImageComponent.SetNativeSize();
-            SetDragImagePosition(eventData.position);
-            dragImage.SetActive(true);
+            if (dragImageComponent != null && slot != null)
+            {
+                dragImageComponent.sprite = slot.sprite;
+                dragImageComponent.SetNativeSize();
+                SetDragImagePosition(eventData.position);
+                dragImage.SetActive(true);
 
-            originalSlot = this;
-            originalParent = transform.parent;
+                originalSlot = this;
+                originalParent = transform.parent;
 
-            canvasGroup.blocksRaycasts = false;
-            slot.color = new Color(slot.color.r, slot.color.g, slot.color.b, 0f);  
+                canvasGroup.blocksRaycasts = false;
+                slot.color = new Color(slot.color.r, slot.color.g, slot.color.b, 0f);
+            }
         }
     }
 

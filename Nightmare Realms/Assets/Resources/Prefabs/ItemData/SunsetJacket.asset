@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: "\uC120\uC14B \uC790\uCF13"
   Tear: Legendary
   damage: 0
-  health: 45
+  health: 60
   price: 350

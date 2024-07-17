@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: "\uC5D0\uBA54\uB784\uB4DC \uC13C\uD2F0\uB12C \uD50C\uB808\uC774\uD2B8"
   Tear: Common
   damage: 0
-  health: 10
+  health: 20
   price: 65

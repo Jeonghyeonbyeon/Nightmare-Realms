@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: "\uC138\uB8F0\uB9AC\uC548 \uD749\uAC11"
   Tear: Unique
   damage: 0
-  health: 30
+  health: 50
   price: 250

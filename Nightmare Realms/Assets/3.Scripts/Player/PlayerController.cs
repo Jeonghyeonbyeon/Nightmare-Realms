@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     public bool isAttack;
     public bool isDead;
     public bool isSkill;
-    private bool isJump;
 
     void Start()
     {

@@ -16,11 +16,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            BossController boss = GameObject.Find("NightmareSkull").GetComponent<BossController>();
-            StartCoroutine(boss.TakeDamage(3000));
-        }
         if (stage > 4 && GameObject.Find("NightmareSkull").GetComponent<BossController>().curHP <= 0)
         {
             UIManager.instance.clear.SetActive(true);

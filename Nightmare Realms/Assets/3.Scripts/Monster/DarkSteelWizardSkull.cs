@@ -50,7 +50,7 @@ public class DarkSteelWizardSkull : Monster
         else if (groundHit)
         {
             Debug.Log("점프!");
-            rigid.AddForce(transform.up * 1.15f, ForceMode2D.Impulse);
+            rigid.AddForce(transform.up * 1f, ForceMode2D.Impulse);
         }
         Collider2D hit = Physics2D.OverlapCircle(transform.position, attackRange, layer);
         if (hit != null)

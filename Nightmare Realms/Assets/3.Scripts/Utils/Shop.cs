@@ -29,11 +29,11 @@ public class Shop : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            isShop = !isShop;
+            isShop = true;
         }
     }
 
@@ -41,7 +41,9 @@ public class Shop : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            isShop = !isShop;
+            isShop = false;
+            FindObjectOfType<PlayerController>().enabled = true;
+            FindObjectOfType<PlayerDash>().enabled = true;
         }
     }
 }
