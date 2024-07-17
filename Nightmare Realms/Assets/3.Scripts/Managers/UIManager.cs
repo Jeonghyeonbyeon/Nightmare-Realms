@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject inventory;
     public GameObject shop;
     public GameObject dead;
+    public GameObject clear;
     public Text coinText;
     public Text playerHPText;
     public Text currentMonsterCount;

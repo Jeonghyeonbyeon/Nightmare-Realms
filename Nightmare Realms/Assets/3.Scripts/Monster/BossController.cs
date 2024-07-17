@@ -15,6 +15,8 @@ public class BossController : MonoBehaviour
     public int maxHP;
     private float time = 10f;
     private bool isDead;
+    private bool isBossAnger;
+
 
     private void Start()
     {
@@ -35,15 +37,18 @@ public class BossController : MonoBehaviour
             {
                 if (curHP <= (maxHP / 2))
                 {
+                    isBossAnger = true;
+
                     if (sprite != null)
                     {
                         sprite.color = new Color(200 / 255f, 110 / 255f, 255 / 255f);
-                        time = 5f;
+                        time = 3.5f;
                     }
                 }
                 else
                 {
-                    time = 10f;
+                    isBossAnger = false;
+                    time = 7.5f;
                 }
                 yield return new WaitForSeconds(time);
                 anim.Play("Idle");
@@ -89,10 +94,16 @@ public class BossController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.3f);
 
         if (sprite != null)
-            sprite.color = new Color(150 / 255f, 150 / 255f, 150 / 255f);
+        {
+            if (!isBossAnger)
+                sprite.color = new Color(150 / 255f, 150 / 255f, 150 / 255f);
+            else
+                sprite.color = new Color(200 / 255f, 110 / 255f, 255 / 255f);
+        }
         else
+        {
             Debug.LogWarning("SpriteRenderer is null or destroyed");
-
+        }
         anim.Play("Idle");
 
         if (curHP <= 0)

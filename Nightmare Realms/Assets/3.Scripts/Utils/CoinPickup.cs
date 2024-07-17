@@ -8,21 +8,16 @@ public class CoinPickup : MonoBehaviour
     [SerializeField] private float speed = 5f;
     private Transform playerTransform;
 
-    void Start()
-    {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
     void Update()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), radius, LayerMask.GetMask("Coin"));
 
         foreach (Collider2D hit in hits)
         { 
             if (hit.CompareTag("Coin"))
             {
-                hit.GetComponent<Collider2D>().isTrigger = true;
-
                 StartCoroutine(MoveCoinTowardsPlayer(hit.transform));
             }
         }

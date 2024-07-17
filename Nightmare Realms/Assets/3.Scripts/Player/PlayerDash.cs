@@ -51,6 +51,7 @@ public class PlayerDash : MonoBehaviour
 
     void StartDash()
     {
+        player.enabled = false;
         StartCoroutine(CoolTimeFunc(0.75f, 0.75f));
         AudioClip clip = SoundManager.instance.jump;
         SoundManager.instance.PlaySFX_1(clip);
@@ -80,6 +81,7 @@ public class PlayerDash : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.gravityScale = originalGravityScale;
             GetComponent<GhostEffect>().enabled = false;
+            player.enabled = true;
             playerController.isDash = false;
         }
     }
