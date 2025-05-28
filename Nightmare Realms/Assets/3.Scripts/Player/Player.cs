@@ -109,16 +109,16 @@ public class Player : MonoBehaviour
 
         if (deadImage != null)
         {
-            float elapsedTime = 0f;
-            float fadeDuration = 5f;
+            float time = 0f;
+            float fade = 5f;
 
-            while (elapsedTime < fadeDuration)
+            while (time < fade)
             {
-                elapsedTime += Time.deltaTime;
-                float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
-                Color newColor = deadImage.color;
-                newColor.a = alpha;
-                deadImage.color = newColor;
+                time += Time.deltaTime;
+                float alpha = Mathf.Lerp(0f, 1f, time / fade);
+                Color color = deadImage.color;
+                color.a = alpha;
+                deadImage.color = color;
                 yield return null;
             }
             UIManager.instance.anyKeyText.gameObject.SetActive(true);
