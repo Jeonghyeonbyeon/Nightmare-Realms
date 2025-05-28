@@ -70,15 +70,7 @@ public abstract class Monster : MonoBehaviour
         curHP -= damage;
         SetHPSliderValue();
 
-        if (sprite != null)
-            sprite.color = Color.red;
-        else
-            Debug.LogWarning("SpriteRenderer is null or destroyed");
-        yield return new WaitForSecondsRealtime(0.15f);
-        if (sprite != null)
-            sprite.color = new Color(150 / 255f, 150 / 255f, 150 / 255f);
-        else
-            Debug.LogWarning("SpriteRenderer is null or destroyed");
+        yield return StartCoroutine(FlashDamageColor());
 
         if (curHP <= 0)
         {
@@ -86,6 +78,16 @@ public abstract class Monster : MonoBehaviour
         }
     }
 
+    private IEnumerator FlashDamageColor()
+    {
+        if (sprite != null)
+            sprite.color = Color.red;
+
+        yield return new WaitForSecondsRealtime(0.15f);
+
+        if (sprite != null)
+            sprite.color = new Color(150 / 255f, 150 / 255f, 150 / 255f);
+    }
 
     protected void SetHPSliderValue() => hp.value = (float)curHP / maxHP;
 
@@ -94,8 +96,8 @@ public abstract class Monster : MonoBehaviour
     protected abstract void Attack();
     protected abstract void Dead();
 
-    protected void ChangeStateTo(State newState)
+    protected void ChangeStateTo(State state)
     {
-        currentState = newState;
+        currentState = state;
     }
 }
