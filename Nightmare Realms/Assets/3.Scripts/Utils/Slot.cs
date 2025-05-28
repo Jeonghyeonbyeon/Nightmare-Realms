@@ -71,11 +71,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 
         if (visible)
         {
-            if (eventData.button == PointerEventData.InputButton.Left)
-            {
-                // Left Click!
-            }
-            else if (eventData.button == PointerEventData.InputButton.Middle)
+            if (eventData.button == PointerEventData.InputButton.Middle)
             {
                 UseItem();
             }
@@ -102,8 +98,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 
     private void DropItem()
     {
-        Debug.Log($"Dropping item with name: {itemName}"); 
-
         GameObject itemPrefab = (GameObject)Resources.Load($"Prefabs/Item/{itemName}");
         GameObject item = Instantiate(itemPrefab, GameObject.Find("Player").transform.position, Quaternion.identity);
         item.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
